@@ -1,0 +1,23 @@
+{
+    "name": "Netimóveis By Guilherme Gomes",
+    "short_name": "Netimóveis By Guilherme Gomes",
+    "description": "Development Test",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "dir": "auto",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "permissions": ["geolocation", "camera", "contacts"],
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF",
+    "categories": ["productivity"],
+
+    "form_factors": {
+      "phone": true,
+      "tablet": true,
+      "desktop": true,
+      "wide": true
+    }
+  }
+  

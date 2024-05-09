@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Front-end Challenge - Netimóveis 20240110
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introdução
 
-## Available Scripts
+Este é o nosso case técnico para Front-end! A ideia é que você possa mostrar toda sua expertise técnica através dele :D
+Estamos animados para te ver brilhar novamente!
 
-In the project directory, you can run:
+[SPOILER] As instruções de entrega e apresentação do challenge estão no final deste Readme (=
 
-### `npm start`
+### Antes de começar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Prepare o projeto para ser disponibilizado no Github, copiando o conteúdo deste repositório para o seu (ou utilize o fork do projeto e aponte para o Github). Confirme que a visibilidade do projeto é pública (não esqueça de colocar no readme a referência a este challenge);
+- O projeto deve utilizar a Linguagem específica ou Framework na sua Vaga (caso esteja se candidatando). Por exempo: Next.js, React e entre outras;
+- Considere como *deadline 5 dias a partir do início do desafio*. Caso tenha sido convidado a realizar o teste e não seja possível concluir dentro deste período, avise a pessoa que o convidou para receber instruções sobre o que fazer.
+- Documentar todo o processo de investigação para o desenvolvimento da atividade (README.md no seu repositório); os resultados destas tarefas são tão importantes do que o seu processo de pensamento e decisões à medida que as completa, por isso tente documentar e apresentar os seus hipóteses e decisões na medida do possível.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Instruções iniciais obrigatórias
 
-### `npm test`
+- Utilizar o framework Next.js (opte pela versão que preferir)
+- Utilizar o framework Tailwind CSS para a UI (pode usar outros, porém, conta muito para nós usar o Tailwind CSS ) ♥
+- Utilizar classes para os dados.
+- Seguir o protótipo da tela
+- 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Será um enorme **diferencial** para a gente se você: 
+- Optar por usar **TypeScript**.
+- Aplicar **Testes Unitários** em Componentes.
 
-### `npm run build`
+### Instruções
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Vamos disponibilizar para você dois JSONs como fonte de dados. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Um será o [place.json](./assets/place.json), que contém as informações de 5 cidades brasileiras. 
+- O segundo será o [flats.json](./assets/flats.json), nele está o relacionamento cidade versus hotéis.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`Também iremos disponibilizar o protótipo da tela que você deverá nos entregar.`
 
-### `npm run eject`
+### Home
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Estude o Figma para trabalhar no projeto com os requisitos essênciais:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Figma](https://www.figma.com/file/Bbwa2wakxxcUMZB4Y4nXke/Teste-Coodesh?type=design&t=gJx1Cj6soxAtWvks-6)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Formulário
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- O campo Localização deverá listar as opções no formato 'Belo Horizonte, Minas Gerais'. Quando selecionada uma opção, ela deverá ser exibida como 'Belo Horizonte, BH'.
+- O campo Nº de Quartos deverá ser um Dropdown para informar a quantidade e selecionar os Tipos
+- O botão deverá 'Buscar' terar alguns comportamentos ao passar o Mouse, seguindo as especificações do Figma
 
-## Learn More
+#### Listagem
+- Apresente as imagens do imóveis em um carrossel.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Extras
+- Desenhar os demais elementos da página
+- Trabalhar com testes unitários
+- Header flutuante
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Readme do Repositório
 
-### Code Splitting
+- Deve conter o título do projeto
+- Uma descrição sobre o projeto em frase
+- Deve conter uma lista com linguagem, framework e/ou tecnologias usadas
+- Como instalar e usar o projeto (instruções)
+- Não esqueça o [.gitignore](https://www.toptal.com/developers/gitignore)
+- Se está usando github pessoal, referencie que é um challenge by coodesh:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+>  This is a challenge by [Coodesh](https://coodesh.com/)
 
-### Analyzing the Bundle Size
+## Finalização e Instruções para a Apresentação
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Adicione o repositório na avaliação
+2. Verifique se o Readme está bom e faça o commit final;
+3. Ao finalizar a entrega do código, enviar para a avaliação no botão "Enviar Código" na parte superior da avaliação
+4. Apresentar o resultado da sua entrega, você terá as instruções para apresentação após "Enviar Código".
 
-### Making a Progressive Web App
+## Suporte
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Use o nosso canal no slack: http://bit.ly/32CuOMy para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Me chamo Guilherme Farias Gomes e essa Landing Page foi desenvolvida TOTALMENTE por mim. 
 
-### Deployment
+Para iniciar o projeto, basta Clonar o repositório ou baixar o arquivo como zip e abrir no VS Code. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Para instalar as dependências do projeto:
 
-### `npm run build` fails to minify
+-- npm install (windows / Linux)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-- yarn install (macOS / Linux)
