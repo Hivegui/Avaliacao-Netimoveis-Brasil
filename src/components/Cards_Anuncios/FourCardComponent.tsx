@@ -6,20 +6,20 @@ export default function FourCard() {
     <div className="max-w-sm rounded-lg overflow-hidden shadow-md">
       <img className="w-full" src={Banner4} alt="Sala de Estar" />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2 text-black-2 dark:text-white">
+        <div className="font-bold text-xl mb-2 text-black-2 dark:text-white lg:text-base">
           Casa à Venda, 156m²
         </div>
-        <p className="text-gray-400 text-base">
+        <p className="text-gray-400 text-base lg:text-base">
           Cristiano Moreira Sales, Buritis
         </p>
-        <p className="text-gray-700 text-base mt-3 dark:text-white">
+        <p className="text-gray-700 text-base mt-3 dark:text-white lg:text-xs">
           3 Quartos • 2 Banheiros • 4 Vagas
         </p>
-        <div className="flex justify-center mt-3">
-          <p className="text-blue-900 text-center whitespace-nowrap mr-3 bg-gray-200 dark:text-black-2 rounded-full text-base px-3 py-1">
+        <div className="flex justify-center lg:items-start mt-3 lg:text-xs text-blue-900 lg:text-blue-900">
+          <p className="text-center whitespace-nowrap mr-3 bg-gray-200 dark:text-black-2 rounded-full text-sm px-3 py-1">
             Armário Embutido
           </p>
-          <p className="text-blue-900 text-center whitespace-nowrap bg-gray-200 dark:text-black-2 rounded-full text-base px-3 py-1">
+          <p className="text-blue-900 text-center whitespace-nowrap bg-gray-200 dark:text-black-2 rounded-full text-sm px-3 py-1">
             Elevador
           </p>
         </div>

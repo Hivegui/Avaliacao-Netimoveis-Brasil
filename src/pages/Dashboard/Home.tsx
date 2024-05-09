@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 // Import de Componentes
-import Carousel from '../../components/Carousel/Carousel'
 import SearchBar from '../../components/Component_Search_Bar/SearchBar'
+import Carousel from '../../components/Carousel/Carousel'
+import CarouselEstados from '../../components/Carousel/CarouselStates'
 import PropertySearch from '../../components/Component_Property_Search/PropertySearch'
 import CardHover from '../../components/Card_Hover/CardHoverComponent'
 import CardHoverImage from '../../components/Card_Hover/CardHoverImageComponent'
-import CarrosselEstados from '../../components/Carousel/CarouselStates'
 // Import de Imagens
 import BackgroundPrincipal from '../../images/baner/BannerDeInicio.png'
 import AnuncieGratis from '../../images/baner/AnuncieGratis.png'
@@ -123,31 +123,39 @@ const Home = () => {
         </div>
 
         {/* Componente de Carrossel */}
-        <div className="overflow-x-auto sm:overflow-x-hidden overflow-x-hidden sm-px-1 overflow-y-hidden mt-5 bg-white dark:bg-black mb-25">
+        <div className="overflow-x-auto sm:overflow-x-hidden overflow-x-hidden sm-px-1 overflow-y-hidden mt-5 bg-white dark:bg-black mb-25 xl:overflow-x-hidden sm-px-1">
           <Carousel />
         </div>
       </div>
-
       {/* Título - Encontre um lugar que é a sua cara */}
-      <div className="bg-gray-100 dark:bg-black dark:text-white flex">
-        <div className="p-4 ml-60 mb-70 mt-20 flex flex-col justify-center">
-          <h1 className="text-5xl text-gray-600 font-bold mb-4">
-            Encontre um lugar <br /> que é a sua cara
+      <div className="bg-gray-100 dark:bg-black dark:text-white flex flex-col sm:flex-row sm:text-left">
+        <div className="p-4 sm:ml-60 mb-70 mt-20">
+          <h1 className="text-4xl lg:text-5xl text-gray-600 font-medium mb-4 sm:ml-0 sm:text-bold">
+            <span className="block">
+              Encontre um lugar <br />
+              que e a sua cara
+            </span>
           </h1>
-          <p className="text-xl mt-10">
+          <h1 className="block lg:hidden text-sm font-semibold">
+            A Netimóveis te proporciona uma <br />
+            experiência ágil e segura neste momento <br />
+            tão importante que é decidir um lar.
+          </h1>
+          <p className="text-xl mt-10 hidden sm:block">
             A Netimóveis te oferece uma experiência ágil e segura na <br /> hora
             de comprar ou alugar seu imóvel. Seja de maneira <br /> digital ou
             física, fazemos a diferença neste momento tão <br /> importante que
             é decidir um lar.
           </p>
         </div>
-        <div className='mt-20'>
+
+        <div className="mt-20">
           <CardHover />
         </div>
       </div>
 
       {/* Componente de Hover */}
-        <CardHoverImage />
+      <CardHoverImage />
 
       <div className="flex justify-center items-center h-screen bg-white dark:bg-black">
         {/* Banner com imagem de pesquisa */}
@@ -187,7 +195,7 @@ const Home = () => {
         </h1>
 
         {/* Componente de Carrossel com Estados */}
-        <CarrosselEstados />
+        <CarouselEstados />
 
         {/* Banner de Portugal */}
         <div className="relative">

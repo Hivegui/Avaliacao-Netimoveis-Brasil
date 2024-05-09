@@ -50,7 +50,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative mb-5">
       {/* Botões de navegação */}
       <div className="justify-end flex mb-7 mr-5 items-center space-x-4 z-10">
         {/* Ícone de voltar */}
