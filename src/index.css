@@ -169,25 +169,3 @@ span.flatpickr-weekday,
 #radio2:checked + label {
   @apply bg-meta-1 text-white;
 }
-
-/* Scrollbar styling */
-/* Thumb (handle) style of the scrollbar */
-::-webkit-scrollbar-thumb {
-  background-color: rgba(156, 163, 175, 0.5);
-  border-radius: 9999px;
-  height: 8px;
-}
-
-/* Track (background) style */
-::-webkit-scrollbar-track {
-  background-color: rgba(209, 213, 219, 0.5);
-  border-radius: 9999px;
-  height: 8px; /* This creates a rounded track */
-}
-
-/* Scrollbar style */
-::-webkit-scrollbar {
-  width: 8px;
-  border-radius: 9999px;
-  height: 11px; /* Scrollbar width */
-}

@@ -1,27 +1,32 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import BackgroundPrincipal from '../../images/baner/BannerDeInicio.png'
+// Import de Componentes
 import Carousel from '../../components/Carrossel/Carrossel'
 import SearchBar from '../../components/Component_Search_Bar/SearchBar'
 import PropertySearch from '../../components/Component_Property_Search/PropertySearch'
 import CardHover from '../../components/Card_Hover/CardHoverComponent'
 import CardHoverImage from '../../components/Card_Hover/CardHoverImageComponent'
-import AnuncieGratis from '../../images/baner/AnuncieGratis.png'
 import CarrosselEstados from '../../components/Carrossel/CarrosselEstados'
+// Import de Imagens
+import BackgroundPrincipal from '../../images/baner/BannerDeInicio.png'
+import AnuncieGratis from '../../images/baner/AnuncieGratis.png'
 import BannerPortugal from '../../images/baner/BannerPortugal.png'
 import Apresentacao from '../../images/baner/Apresentacao.png'
 import GrupoNetimoveis from '../../images/baner-card/GrupoNetimoveis.png'
 import Financas from '../../images/baner-card/Financas.png'
 import Conserto from '../../images/baner-card/Conserto.png'
+import FacaParte from '../../images/baner/FacaParte.png'
+import ApplePlay from '../../images/baner-card/AppleStore.png'
+import GooglePlay from '../../images/baner-card/GooglePlay.png'
 // Ícones Importados
 import { GoClock } from 'react-icons/go'
 import { FaCircle } from 'react-icons/fa'
 import { FiArrowRight } from 'react-icons/fi'
 import { LuExternalLink } from 'react-icons/lu'
 
-
 const Home = () => {
   const [activeTab, setActiveTab] = useState('alugar')
+  const [activeTab2, setActiveTab2] = useState('tipos')
 
   return (
     <div className="relative bg-white dark:bg-black">
@@ -54,7 +59,7 @@ const Home = () => {
           <button
             className={`${
               activeTab === 'alugar'
-                ? 'text-black-2 border-b-2 border-gray-500 dark:text-white'
+                ? 'text-black-2 border-b-1 border-gray-500 dark:text-white'
                 : ''
             }`}
             onClick={() => setActiveTab('alugar')}
@@ -64,7 +69,7 @@ const Home = () => {
           <button
             className={`${
               activeTab === 'comprar'
-                ? 'text-black-2 border-b-2 border-orange-500 dark:text-white'
+                ? 'text-black-2 border-b-1 border-orange-500 dark:text-white'
                 : ''
             }`}
             onClick={() => setActiveTab('comprar')}
@@ -79,7 +84,7 @@ const Home = () => {
         <PropertySearch />
       </div>
 
-      <div className="px-5 sm:px-60 bg-white dark:bg-black">
+      <div className="px-5 bg-white dark:bg-black">
         <a
           href="/"
           className="text-base py-2 font-bold text-black-2 dark:text-white"
@@ -117,7 +122,7 @@ const Home = () => {
         </div>
 
         {/* Componente de Carrossel */}
-        <div className="overflow-x-auto sm:overflow-x-hidden overflow-x-hidden overflow-y-hidden mt-5 bg-white dark:bg-black mb-25">
+        <div className="overflow-x-auto sm:overflow-x-hidden overflow-x-hidden sm-px-1 overflow-y-hidden mt-5 bg-white dark:bg-black mb-25">
           <Carousel />
         </div>
       </div>
@@ -257,7 +262,7 @@ const Home = () => {
         </div>
       </div>
       {/* Cabeçalho com Compradores, Vendedores ou Curiosos */}
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen bg-gray-100">
         <div className="text-center text-gray-600 p-4 mt-20">
           <h1 className="text-2xl font-bold text-justify ml-60 dark:text-white">
             Para compradores, vendedores ou curiosos :)
@@ -361,14 +366,151 @@ const Home = () => {
             </Link>
           </div>
         </div>
+        {/* Imagem Faça Parte Netimóveis */}
+        <div className="relative mt-20 flex text-center bg-gray-100">
+          <img
+            src={FacaParte}
+            alt="Faça Parte"
+            className="rounded-lg object-cover ml-75"
+            style={{
+              width: '70%',
+              height: '330px',
+            }}
+          />
+        </div>
 
-        {/* Seção 'Faça parte da Netimóveis' */}
-        <div className="p-4 mt-30 text-black-2 bg-Gray">
-          <h2 className="text-xl font-bold">Faça parte da Netimóveis</h2>
-          <p>
-            É uma empresa que se identifica com os valores e cultura da rede?
-            Faça parte do time e utilize nossa tecnologia.
-          </p>
+        <div className="flex flex-col items-center justify-center mt-30">
+          <div className="flex space-x-4 p-4 border-b-2 border-gray-300">
+            <button
+              className={`px-4 py-2 font-bold ${
+                activeTab2 === 'tipos'
+                  ? 'text-orange-500 border-b-2 border-orange-500'
+                  : 'text-gray-400'
+              }`}
+              onClick={() => setActiveTab2('tipos')}
+            >
+              Tipos de Propriedades
+            </button>
+            {/* Botão Populares para Venda */}
+            <button
+              className={`px-4 py-2 font-bold ${
+                activeTab2 === 'venda'
+                  ? 'text-orange-500 border-b-2 border-orange-500'
+                  : 'text-gray-400'
+              }`}
+              onClick={() => setActiveTab2('venda')}
+            >
+              Populares para Venda
+            </button>
+            {/* Botão Populares para Locação */}
+            <button
+              className={`px-4 py-2 font-bold ${
+                activeTab2 === 'locacao'
+                  ? 'text-orange-500 border-b-2 border-orange-500'
+                  : 'text-gray-400'
+              }`}
+              onClick={() => setActiveTab2('locacao')}
+            >
+              Populares para Locação
+            </button>
+          </div>
+
+          <div className="p-4">
+            {activeTab2 === 'tipos'}
+            {activeTab2 === 'venda'}
+            {activeTab2 === 'locacao'}
+          </div>
+          <div>
+            <div className="grid grid-cols-3">
+              <div className="mr-20">
+                <h3 className="font-bold text-lg">Alugar</h3>
+                <ul>
+                  <li className="mt-2">Apartamentos</li>
+                  <li className="mt-2">Casas</li>
+                  <li className="mt-2">Terrenos</li>
+                  <li className="mt-2">Lojas</li>
+                </ul>
+              </div>
+              <div className="mr-10">
+                <h3 className="font-bold text-lg">Comprar</h3>
+                <ul>
+                  <li className="mt-2">Casas à Venda</li>
+                  <li className="mt-2">Imóv. em Condomínios</li>
+                  <li className="mt-2">Comprar terrenos</li>
+                  <li className="mt-2">Lançamentos</li>
+                </ul>
+              </div>
+              <div className="mr-10">
+                <h3 className="font-bold text-lg">Comercial</h3>
+                <ul>
+                  <li className="mt-2">Imóveis com Escritório</li>
+                  <li className="mt-2">Prédio comercial</li>
+                  <li className="mt-2">Galpão de Armazenamento</li>
+                  <li className="mt-2">Salão de Eventos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <div className="grid grid-cols-4">
+              {/* Coluna 1 */}
+              <div className="ml-10">
+                <h3 className="font-bold">A Netimóveis</h3>
+                <ul>
+                  <li className="mt-2">Quem somos</li>
+                  <li className="mt-2">Como Funciona</li>
+                  <li className="mt-2">Seja um parceiro</li>
+                  <li className="mt-2">Quero me associar</li>
+                  <li className="mt-2">Acessoria de imprensa</li>
+                  <li className="mt-2">Soluções Corporativas</li>
+                  <li className="mt-2">Covid-19</li>
+                </ul>
+              </div>
+              {/* Coluna 2 */}
+              <div className="ml-20">
+                <h3 className="font-bold">Recursos</h3>
+                <ul>
+                  <li className="mt-2">Comprar</li>
+                  <li className="mt-2">Alugar</li>
+                  <li className="mt-2">Lançamentos</li>
+                  <li className="mt-2">Anunciar Imóvel</li>
+                  <li className="mt-2">Simular Financiamento</li>
+                  <li className="mt-2">Imobiliárias</li>
+                  <li className="mt-2">Blog</li>
+                </ul>
+              </div>
+              {/* Coluna 3 */}
+              <div className="ml-30">
+                <h3 className="font-bold">Contato</h3>
+                <ul>
+                  <li className="mt-2">Fale Conosco</li>
+                  <li className="mt-2">Perguntas Frequentes</li>
+                  <li className="mt-2">Suporte</li>
+                </ul>
+              </div>
+              {/* Coluna 4 */}
+              <div className="ml-10">
+                <h3 className="font-bold">Nossos Aplicativos</h3>
+                <ul>
+                  <li className="mt-2">Loc Fácil Netimóveis</li>
+                  <li className="mt-2">Pro Imob Netimóveis</li>
+                </ul>
+                <div className="flex">
+                  <img
+                    src={ApplePlay}
+                    alt="App Store"
+                    className="w-35 h-11 mt-2 mr-2"
+                  />
+                  <img
+                    src={GooglePlay}
+                    alt="Google Play"
+                    className="w-35 h-14"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
