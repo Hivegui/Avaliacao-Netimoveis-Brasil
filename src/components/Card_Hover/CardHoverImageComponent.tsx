@@ -2,28 +2,43 @@ import React, { useRef, useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import BannerHover from '../../images/baner/SolManha.png'
+// Import de Imagens
+import BannerSol from '../../images/baner/SolManha.png'
+import BannerPet from '../../images/baner/AceitaPet.png'
+import BannerOnibus from '../../images/baner/OnibusPerto.png'
+import BannerVaranda from '../../images/baner/TemVaranda.png'
+import BannerQuintal from '../../images/baner/TemQuintal.png'
+import BannerInternet from '../../images/baner/TemInternet.png'
+// Import de Ícones
 import { PiPawPrintFill, PiSunHorizonThin } from 'react-icons/pi'
 import { FaBus, FaChevronRight, FaCircle } from 'react-icons/fa'
 import { MdCellWifi, MdOutlineYard } from 'react-icons/md'
 
 const CardHoverImage = () => {
-  const [content, setContent] = useState('sol')
+  const [content, setContent] = useState('sol') // Estado para controlar o conteúdo exibido
+  const [backgroundImageSol, setBackgroundImageSol] = useState(BannerSol) // Estado para controlar a imagem de fundo
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3, // Alterado para 1 para navegar um slide por vez
-    arrows: false, // Habilitar setas de navegação
+    slidesToScroll: 3,
+    arrows: false,
   }
 
-  let sliderRef // Ref para o Slider
+  let sliderRef
 
   const nextSlide = () => {
-    sliderRef.slickNext() // Navegar para o próximo slide
+    sliderRef.slickNext()
   }
 
+  const handleContentChange = (newContent, newBackgroundImage) => {
+    setContent(newContent)
+    setBackgroundImageSol(newBackgroundImage)
+  }
+
+  // Definições de conteúdo para cada botão
   const solContent = (
     <>
       <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
@@ -42,7 +57,7 @@ const CardHoverImage = () => {
   const petContent = (
     <>
       <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
-        Aceitamos seu <br/> Doguinho 🐶
+        Aceitamos seu <br /> Pet
       </h2>
       <p className="text-gray-600 mb-6 text-justify dark:text-white">
         Sed ut perspiciatis unde omnis iste natus <br /> unde omnis iste natus
@@ -57,7 +72,7 @@ const CardHoverImage = () => {
   const varandaContent = (
     <>
       <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
-        Linda vista da <br/> Varanda
+        Linda vista da <br /> Varanda
       </h2>
       <p className="text-gray-600 mb-6 text-justify dark:text-white">
         Sed ut perspiciatis unde omnis iste natus <br /> unde omnis iste natus
@@ -72,7 +87,7 @@ const CardHoverImage = () => {
   const onibusContent = (
     <>
       <h2 className="text-2xl font-extrabold text-gray-800 mb-4 text-justify dark:text-white">
-        Ônibus na sua <br/> Porta
+        Ônibus na sua <br /> Porta
       </h2>
       <p className="text-gray-600 mb-6 text-justify dark:text-white">
         Sed ut perspiciatis unde omnis iste natus <br /> unde omnis iste natus
@@ -119,7 +134,7 @@ const CardHoverImage = () => {
       {/* Background da imagem */}
       <header className="items-center justify-center relative">
         <img
-          src={BannerHover}
+          src={backgroundImageSol}
           alt="Background"
           style={{
             width: '100%', // Reduz a largura para 100% do contêiner pai
@@ -138,13 +153,12 @@ const CardHoverImage = () => {
                 {...settings}
                 style={{ width: '100%', maxWidth: '400px', margin: 'auto' }}
               >
-                {' '}
-                {/* Pega Sol */}
+                {/* Botões */}
                 <button
                   className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
                     content === 'sol' ? 'border-b-2 border-orange-500' : ''
                   }`}
-                  onClick={() => setContent('sol')}
+                  onClick={() => handleContentChange('sol', BannerSol)}
                 >
                   <div className="flex flex-col items-center">
                     <PiSunHorizonThin className="h-6 w-6 mb-1" />
@@ -153,12 +167,13 @@ const CardHoverImage = () => {
                     </span>
                   </div>
                 </button>
+
                 {/* Aceitam Pet */}
                 <button
                   className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
                     content === 'pet' ? 'border-b-2 border-orange-500' : ''
                   }`}
-                  onClick={() => setContent('pet')}
+                  onClick={() => handleContentChange('pet', BannerPet)}
                 >
                   <div className="flex flex-col items-center">
                     <PiPawPrintFill className="h-6 w-6 mb-1" />
@@ -173,7 +188,7 @@ const CardHoverImage = () => {
                   className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
                     content === 'onibus' ? 'border-b-2 border-orange-500' : ''
                   }`}
-                  onClick={() => setContent('onibus')}
+                  onClick={() => handleContentChange('onibus', BannerOnibus)}
                 >
                   <div className="flex flex-col items-center">
                     <FaBus className="h-6 w-6 mb-1" />
@@ -188,7 +203,7 @@ const CardHoverImage = () => {
                   className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
                     content === 'varanda' ? 'border-b-2 border-orange-500' : ''
                   }`}
-                  onClick={() => setContent('varanda')}
+                  onClick={() => handleContentChange('varanda', BannerVaranda)}
                 >
                   <div className="flex flex-col items-center">
                     <FaCircle className="h-6 w-6 mb-1" />
@@ -197,13 +212,13 @@ const CardHoverImage = () => {
                     </span>
                   </div>
                 </button>
-                
+
                 {/* Tem Quintal */}
                 <button
                   className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
                     content === 'quintal' ? 'border-b-2 border-orange-500' : ''
                   }`}
-                  onClick={() => setContent('quintal')}
+                  onClick={() => handleContentChange('quintal', BannerQuintal)}
                 >
                   <div className="flex flex-col items-center">
                     <MdOutlineYard className="h-6 w-6 mb-1" />
@@ -217,7 +232,7 @@ const CardHoverImage = () => {
                   className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
                     content === 'internet' ? 'border-b-2 border-orange-500' : ''
                   }`}
-                  onClick={() => setContent('internet')}
+                  onClick={() => handleContentChange('internet', BannerInternet)}
                 >
                   <div className="flex flex-col items-center">
                     <MdCellWifi className="h-6 w-6 mb-1" />
@@ -232,6 +247,7 @@ const CardHoverImage = () => {
                 onClick={nextSlide}
               />
             </div>
+            {/* Conteúdo */}
             <div className="text-center">
               {content === 'sol'
                 ? solContent

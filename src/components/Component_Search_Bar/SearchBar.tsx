@@ -6,11 +6,11 @@ import { TbBed } from 'react-icons/tb'
 function SearchBar() {
   const [showLabel, setShowLabel] = useState(false)
   const [selectedOption, setSelectedOption] = useState('Todos')
-  const [roomSearch, setRoomSearch] = useState('') // Estado para armazenar a pesquisa de quartos
+  const [roomSearch, setRoomSearch] = useState('')
 
   const handleOptionClick = (option) => {
     setSelectedOption(option)
-    setRoomSearch(option !== 'Todos' ? `${option} Quartos` : 'Todos os Quartos') // Define o texto do campo de busca com base na opção selecionada
+    setRoomSearch(option !== 'Todos' ? `${option} Quartos` : 'Todos os Quartos')
   }
   
 
@@ -40,7 +40,7 @@ function SearchBar() {
             <input
               className="px-4 py-3 w-full text-black-2 hover:bg-gray-200 transition duration-300 focus:outline-none pl-8 rounded-full"
               type="text"
-              placeholder={roomSearch || "Quantos Quartos?"} // Define o placeholder com base no texto do campo de busca
+              placeholder={roomSearch || "Quantos Quartos?"}
               value={roomSearch}
               readOnly
               onClick={() => setShowLabel(!showLabel)}
