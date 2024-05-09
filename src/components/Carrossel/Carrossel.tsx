@@ -2,10 +2,11 @@ import React, { useRef } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+// Importando os ícones
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
-} from 'react-icons/md' // Importando os ícones
+} from 'react-icons/md' 
 import FirstCard from '../Cards_Anuncios/FirstCardComponent'
 import SecondCard from '../Cards_Anuncios/SecondCardComponent'
 import ThirdCard from '../Cards_Anuncios/ThirdCardComponent'
@@ -21,14 +22,14 @@ export default function Carousel() {
     slidesToShow: 4,
     slidesToScroll: 4,
     autoplay: false,
-    autoplaySpeed: 3000, // Defina um valor numérico para o tempo entre transições
+    autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 768, // Largura máxima de 768px
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1, // Mostrar apenas 1 slide por vez
-          slidesToScroll: 1, // Deslizar 1 slide por vez
-          dots: false, // Ocultar os pontos em telas pequenas
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
         },
       },
     ],

@@ -161,10 +161,6 @@ const CardHover = () => {
                   </div>
                 </button>
               </Slider>
-              <FaChevronRight
-                className="text-black-2 cursor-pointer"
-                onClick={nextSlide}
-              />
             </div>
             {/* Conteúdo */}
             <div className="text-center h-60 w-auto  overflow-hidden">
