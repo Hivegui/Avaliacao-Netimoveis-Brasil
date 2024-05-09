@@ -16,7 +16,9 @@
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
     "@heroicons/react": "^1.0.6",
+    "@types/googlemaps": "^3.43.3",
     "apexcharts": "3.41.0",
+    "axios": "^1.6.8",
     "headlessui": "0.0.0",
     "install": "^0.13.0",
     "jquery": "^3.7.1",

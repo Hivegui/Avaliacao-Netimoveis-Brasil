@@ -60,8 +60,8 @@ const Home = () => {
           <button
             className={`${
               activeTab === 'alugar'
-                ? 'text-black-2 border-b-1 border-gray-500 dark:text-orange-500 dark:font-bold'
-                : ''
+                ? 'text-black-2 border-b-1 dark:text-orange-500 dark:font-bold border-b border-orange-500'
+                : 'text-gray-500 dark:text-white'
             }`}
             onClick={() => setActiveTab('alugar')}
           >
@@ -70,8 +70,8 @@ const Home = () => {
           <button
             className={`${
               activeTab === 'comprar'
-                ? 'text-black-2 border-b-1 border-orange-500 dark:text-orange-500 dark:font-bold'
-                : ''
+                ? 'text-black-2 border-b-1 dark:text-orange-500 dark:font-bold border-b border-orange-500'
+                : 'text-gray-500 dark:text-white'
             }`}
             onClick={() => setActiveTab('comprar')}
           >
