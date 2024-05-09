@@ -30,7 +30,7 @@ const Home = () => {
   const [activeTab2, setActiveTab2] = useState('tipos')
 
   return (
-    <div className="relative bg-white dark:bg-black">
+    <div className="relative bg-white dark:bg-black mt-16">
       {/* Background do Banner principal */}
       <header className="items-center justify-center relative">
         <img
@@ -60,7 +60,7 @@ const Home = () => {
           <button
             className={`${
               activeTab === 'alugar'
-                ? 'text-black-2 border-b-1 border-gray-500 dark:text-white'
+                ? 'text-black-2 border-b-1 border-gray-500 dark:text-orange-500 dark:font-bold'
                 : ''
             }`}
             onClick={() => setActiveTab('alugar')}
@@ -70,7 +70,7 @@ const Home = () => {
           <button
             className={`${
               activeTab === 'comprar'
-                ? 'text-black-2 border-b-1 border-orange-500 dark:text-white'
+                ? 'text-black-2 border-b-1 border-orange-500 dark:text-orange-500 dark:font-bold'
                 : ''
             }`}
             onClick={() => setActiveTab('comprar')}
