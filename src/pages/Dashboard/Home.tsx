@@ -129,9 +129,9 @@ const Home = () => {
       </div>
 
       {/* Título - Encontre um lugar que é a sua cara */}
-      <div className="bg-blue-100 dark:bg-black dark:text-white flex">
-        <div className="p-4 ml-60 mb-70 flex flex-col justify-center">
-          <h1 className="text-5xl font-bold mb-4">
+      <div className="bg-gray-100 dark:bg-black dark:text-white flex">
+        <div className="p-4 ml-60 mb-70 mt-20 flex flex-col justify-center">
+          <h1 className="text-5xl text-gray-600 font-bold mb-4">
             Encontre um lugar <br /> que é a sua cara
           </h1>
           <p className="text-xl mt-10">
@@ -141,15 +141,13 @@ const Home = () => {
             é decidir um lar.
           </p>
         </div>
-
-        {/* Componente de Card com Hover */}
-        <CardHover />
+        <div className='mt-20'>
+          <CardHover />
+        </div>
       </div>
 
       {/* Componente de Hover */}
-      <div className="">
         <CardHoverImage />
-      </div>
 
       <div className="flex justify-center items-center h-screen bg-white dark:bg-black">
         {/* Banner com imagem de pesquisa */}
