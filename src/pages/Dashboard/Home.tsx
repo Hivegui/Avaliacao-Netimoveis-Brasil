@@ -379,9 +379,8 @@ const Home = () => {
             }}
           />
         </div>
-
         <div className="flex flex-col items-start justify-start mt-30">
-          <div className="flex space-x-4 p-4 ml-40 border-b-2 border-gray-300">
+          <div className="flex space-x-4 p-4 ml-40 border-b-2 border-gray-300 w-full">
             <button
               className={`px-4 py-2 font-bold ${
                 activeTab2 === 'tipos'
@@ -415,15 +414,13 @@ const Home = () => {
               Populares para Locação
             </button>
           </div>
-
           <div className="p-4">
             {activeTab2 === 'tipos'}
             {activeTab2 === 'venda'}
             {activeTab2 === 'locacao'}
           </div>
-
           <div>
-            <div className="grid grid-cols-3 ml-50">
+            <div className="grid grid-cols-3 ml-50 w-90%">
               <div className="mr-20">
                 <h3 className="font-bold text-lg">Alugar</h3>
                 <ul>
@@ -433,7 +430,7 @@ const Home = () => {
                   <li className="mt-2">Lojas</li>
                 </ul>
               </div>
-              <div className="mr-52">
+              <div className="mr-50">
                 <h3 className="font-bold text-lg">Comprar</h3>
                 <ul>
                   <li className="mt-2">Casas à Venda</li>
@@ -442,7 +439,7 @@ const Home = () => {
                   <li className="mt-2">Lançamentos</li>
                 </ul>
               </div>
-              <div className="ml-0">
+              <div className="mr-0">
                 <h3 className="font-bold text-lg">Comercial</h3>
                 <ul>
                   <li className="mt-2">Imóveis com Escritório</li>
@@ -453,11 +450,10 @@ const Home = () => {
               </div>
             </div>
           </div>
-
-          <div className="mt-20 bg-gray-200">
-            <div className="grid grid-cols-4 ml-40 bg-gray-200">
+          <div className="mt-20 py-10 w-full bg-gray-300">
+            <div className="grid grid-cols-4 ml-40">
               {/* Coluna 1 */}
-              <div className="ml-10 bg-gray-200">
+              <div className="ml-10">
                 <h3 className="font-bold">A Netimóveis</h3>
                 <ul>
                   <li className="mt-2">Quem somos</li>
@@ -470,7 +466,7 @@ const Home = () => {
                 </ul>
               </div>
               {/* Coluna 2 */}
-              <div className="ml-20">
+              <div className="ml-5">
                 <h3 className="font-bold">Recursos</h3>
                 <ul>
                   <li className="mt-2">Comprar</li>
@@ -483,7 +479,7 @@ const Home = () => {
                 </ul>
               </div>
               {/* Coluna 3 */}
-              <div className="ml-30">
+              <div className="ml-0">
                 <h3 className="font-bold">Contato</h3>
                 <ul>
                   <li className="mt-2">Fale Conosco</li>
@@ -514,9 +510,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="mt-15">
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </div>
   )
