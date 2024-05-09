@@ -23,6 +23,7 @@ import { GoClock } from 'react-icons/go'
 import { FaCircle } from 'react-icons/fa'
 import { FiArrowRight } from 'react-icons/fi'
 import { LuExternalLink } from 'react-icons/lu'
+import Footer from '../../components/Footer'
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState('alugar')
@@ -84,7 +85,7 @@ const Home = () => {
         <PropertySearch />
       </div>
 
-      <div className="px-5 bg-white dark:bg-black">
+      <div className="px-5 bg-white dark:bg-black sm:px-60">
         <a
           href="/"
           className="text-base py-2 font-bold text-black-2 dark:text-white"
@@ -379,8 +380,8 @@ const Home = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center justify-center mt-30">
-          <div className="flex space-x-4 p-4 border-b-2 border-gray-300">
+        <div className="flex flex-col items-start justify-start mt-30">
+          <div className="flex space-x-4 p-4 ml-40 border-b-2 border-gray-300">
             <button
               className={`px-4 py-2 font-bold ${
                 activeTab2 === 'tipos'
@@ -420,8 +421,9 @@ const Home = () => {
             {activeTab2 === 'venda'}
             {activeTab2 === 'locacao'}
           </div>
+
           <div>
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-3 ml-50">
               <div className="mr-20">
                 <h3 className="font-bold text-lg">Alugar</h3>
                 <ul>
@@ -431,7 +433,7 @@ const Home = () => {
                   <li className="mt-2">Lojas</li>
                 </ul>
               </div>
-              <div className="mr-10">
+              <div className="mr-52">
                 <h3 className="font-bold text-lg">Comprar</h3>
                 <ul>
                   <li className="mt-2">Casas à Venda</li>
@@ -440,7 +442,7 @@ const Home = () => {
                   <li className="mt-2">Lançamentos</li>
                 </ul>
               </div>
-              <div className="mr-10">
+              <div className="ml-0">
                 <h3 className="font-bold text-lg">Comercial</h3>
                 <ul>
                   <li className="mt-2">Imóveis com Escritório</li>
@@ -452,10 +454,10 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="mt-10">
-            <div className="grid grid-cols-4">
+          <div className="mt-20 bg-gray-200">
+            <div className="grid grid-cols-4 ml-40 bg-gray-200">
               {/* Coluna 1 */}
-              <div className="ml-10">
+              <div className="ml-10 bg-gray-200">
                 <h3 className="font-bold">A Netimóveis</h3>
                 <ul>
                   <li className="mt-2">Quem somos</li>
@@ -511,6 +513,9 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="mt-15">
+          <Footer />
         </div>
       </div>
     </div>

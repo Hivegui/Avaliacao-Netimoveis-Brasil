@@ -1,4 +1,4 @@
-import Logo from '../images/logo/netimoveis-header.png'
+import Logo from '../images/logo/Logo-Header.png'
 import React from 'react'
 import DarkModeSwitcher from './DarkModeSwitcher'
 import { HiMiniBars3 } from 'react-icons/hi2'

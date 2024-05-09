@@ -1,16 +1,15 @@
-import { useState } from 'react';
-import Header from '../components/Header';
-import Sidebar from '../components/Sidebar';
-import { Outlet } from 'react-router-dom';
-import React from 'react';
+import { useState } from 'react'
+import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
+import { Outlet } from 'react-router-dom'
+import React from 'react'
+import Footer from '../components/Footer'
 
 const DefaultLayout = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <div className="dark:bg-boxdark-2 dark:text-bodydark">
-
-      {/* <!-- ===== Page Wrapper Start ===== --> */}
       <div className="flex h-screen overflow-hidden">
         {/* <!-- ===== Sidebar Start ===== --> */}
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
@@ -21,20 +20,15 @@ const DefaultLayout = () => {
           {/* <!-- ===== Header Start ===== --> */}
           <Header />
           {/* <!-- ===== Header End ===== --> */}
-
-          {/* <!-- ===== Main Content Start ===== --> */}
           <main>
             <div className="mx-auto w-full">
               <Outlet />
             </div>
           </main>
-          {/* <!-- ===== Main Content End ===== --> */}
         </div>
-        {/* <!-- ===== Content Area End ===== --> */}
       </div>
-      {/* <!-- ===== Page Wrapper End ===== --> */}
     </div>
-  );
-};
+  )
+}
 
-export default DefaultLayout;
+export default DefaultLayout
