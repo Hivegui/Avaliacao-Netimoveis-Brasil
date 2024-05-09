@@ -1,21 +1,26 @@
-import React, { useRef } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md'; // Importando os ícones
-import CardSaoPaulo from '../Cards_Estados/CardSaoPaulo';
-import CardRioGrandedoSul from '../Cards_Estados/CardRioGrandedoSul';
-import CardRiodeJaneiro from '../Cards_Estados/CardRiodeJaneiro';
-import CardCuritiba from '../Cards_Estados/CardCuritiba';
-import CardBahia from '../Cards_Estados/CardBahia';
-import CardEspiritoSanto from '../Cards_Estados/CardEspiritoSanto';
-import CardParaiba from '../Cards_Estados/CardParaiba';
-import CardBrasilia from '../Cards_Estados/CardBrasilia';
-import CardBeloHorizonte from '../Cards_Estados/CardBeloHorionte';
-import CardSantaCatarina from '../Cards_Estados/CardSantaCatarina';
+import React, { useRef } from 'react'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+// Importando os ícones
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from 'react-icons/md' 
+// Importando Componentes
+import CardSaoPaulo from '../Cards_Estados/CardSaoPaulo'
+import CardRioGrandedoSul from '../Cards_Estados/CardRioGrandedoSul'
+import CardRiodeJaneiro from '../Cards_Estados/CardRiodeJaneiro'
+import CardCuritiba from '../Cards_Estados/CardCuritiba'
+import CardBahia from '../Cards_Estados/CardBahia'
+import CardEspiritoSanto from '../Cards_Estados/CardEspiritoSanto'
+import CardParaiba from '../Cards_Estados/CardParaiba'
+import CardBrasilia from '../Cards_Estados/CardBrasilia'
+import CardBeloHorizonte from '../Cards_Estados/CardBeloHorionte'
+import CardSantaCatarina from '../Cards_Estados/CardSantaCatarina'
 
 export default function CarouselEstados() {
-  const sliderRef = useRef(null);
+  const sliderRef = useRef(null)
 
   const settings = {
     dots: false,
@@ -24,38 +29,37 @@ export default function CarouselEstados() {
     slidesToShow: 4,
     slidesToScroll: 4,
     autoplay: false,
-    autoplaySpeed: 3000, // Defina um valor numérico para o tempo entre transições
+    autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 768, // Largura máxima de 768px
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1, // Mostrar apenas 1 slide por vez
-          slidesToScroll: 1, // Deslizar 1 slide por vez
-          dots: false, // Ocultar os pontos em telas pequenas
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
         },
       },
     ],
-  
+
     customPaging: function (i) {
       return (
         <button className="w-3 h-3 bg-gray-300 rounded-full focus:outline-none" />
-      );
+      )
     },
-  };
+  }
 
   const handlePrevClick = () => {
-    sliderRef.current.slickPrev();
-  };
+    sliderRef.current.slickPrev()
+  }
 
   const handleNextClick = () => {
-    sliderRef.current.slickNext();
-  };
+    sliderRef.current.slickNext()
+  }
 
   return (
     <div className="relative">
-      {/* Botões de navegação */}
       <div className="justify-end flex mb-7 mr-5 items-center space-x-4 z-10">
-        {/* Ícone de voltar */}
+        {/* Botões de navegação - Ícone de voltar e de avançar */}
         <button
           type="button"
           className="w-8 h-8 rounded-full shadow-md bg-white hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-200 hidden md:block"
@@ -65,7 +69,6 @@ export default function CarouselEstados() {
             <MdOutlineKeyboardArrowLeft className="h-5 w-5 text-gray-600 dark:text-black-2" />
           </div>
         </button>
-        {/* Ícone de avançar */}
         <button
           type="button"
           className="w-8 h-8 rounded-full shadow-md bg-white hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-200 hidden md:block"
@@ -77,7 +80,6 @@ export default function CarouselEstados() {
         </button>
       </div>
 
-      {/* Contêiner dos cards */}
       <Slider {...settings} ref={sliderRef}>
         {/* Componentes do Carrossel*/}
         <div className="px-6">
@@ -112,5 +114,5 @@ export default function CarouselEstados() {
         </div>
       </Slider>
     </div>
-  );
+  )
 }

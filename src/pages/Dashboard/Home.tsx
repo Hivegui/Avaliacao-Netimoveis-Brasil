@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 // Import de Componentes
-import Carousel from '../../components/Carrossel/Carrossel'
+import Carousel from '../../components/Carousel/Carousel'
 import SearchBar from '../../components/Component_Search_Bar/SearchBar'
 import PropertySearch from '../../components/Component_Property_Search/PropertySearch'
 import CardHover from '../../components/Card_Hover/CardHoverComponent'
 import CardHoverImage from '../../components/Card_Hover/CardHoverImageComponent'
-import CarrosselEstados from '../../components/Carrossel/CarrosselEstados'
+import CarrosselEstados from '../../components/Carousel/CarouselStates'
 // Import de Imagens
 import BackgroundPrincipal from '../../images/baner/BannerDeInicio.png'
 import AnuncieGratis from '../../images/baner/AnuncieGratis.png'
