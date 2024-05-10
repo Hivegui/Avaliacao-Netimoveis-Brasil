@@ -50,7 +50,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative mb-5">
       {/* Botões de navegação */}
       <div className="justify-end flex mb-7 mr-5 items-center space-x-4 z-10">
         {/* Ícone de voltar */}
@@ -78,6 +78,30 @@ export default function Carousel() {
       {/* Contêiner dos cards */}
       <Slider {...settings} ref={sliderRef}>
         {/* Componentes do Carrossel*/}
+        <div className="px-4">
+          <FirstCard />
+        </div>
+        <div className="px-4">
+          <SecondCard />
+        </div>
+        <div className="px-4">
+          <ThirdCard />
+        </div>
+        <div className="px-4">
+          <FourCard />
+        </div>
+        <div className="px-4">
+          <FirstCard />
+        </div>
+        <div className="px-4">
+          <SecondCard />
+        </div>
+        <div className="px-4">
+          <ThirdCard />
+        </div>
+        <div className="px-4">
+          <FourCard />
+        </div>
         <div className="px-4">
           <FirstCard />
         </div>

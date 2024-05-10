@@ -12,7 +12,7 @@ const useCepSearch = () => {
     state: '',
   });
 
-  const searchCep = async (cep) => {
+  const searchAddressByCep = async (cep) => {
     setLoading(true);
     setError('');
     try {
@@ -26,7 +26,7 @@ const useCepSearch = () => {
         state: data.uf,
       });
     } catch (error) {
-      setError('CEP não encontrado.');
+      setError('Endereço não encontrado para o CEP fornecido.');
     } finally {
       setLoading(false);
     }
@@ -36,7 +36,7 @@ const useCepSearch = () => {
     loading,
     error,
     address,
-    searchCep,
+    searchAddressByCep,
   };
 };
 

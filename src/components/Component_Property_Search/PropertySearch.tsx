@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
-import { SearchIcon } from '@heroicons/react/solid'
-import { CiLocationOn } from 'react-icons/ci'
-import { TbBed } from 'react-icons/tb'
+import React, { useState } from 'react';
+import { SearchIcon } from '@heroicons/react/solid';
+import { CiLocationOn } from 'react-icons/ci';
+import { TbBed } from 'react-icons/tb';
+import useCepSearch from '../../hooks/useSearchCep';
 
 function PropertySearch() {
-  const [location, setLocation] = useState('')
-  const [rooms, setRooms] = useState('')
+  const [location, setLocation] = useState('');
+  const [rooms, setRooms] = useState('');
+  const { loading, error, address, searchAddressByCep } = useCepSearch();
+
+  const handleSearch = () => {
+    // Chamando a função correta para buscar o endereço com base no CEP fornecido
+    searchAddressByCep(location);
+  };
 
   return (
     <div className="flex flex-col items-center justify-center p-4">
@@ -31,7 +38,7 @@ function PropertySearch() {
         </div>
         <select
           id="rooms"
-          className="mt-3 block w-full px-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none h-20 bg-no-repeat bg-transparent pr-8 appearance-none" // Reduzi o espaço à direita para a seta
+          className="mt-3 block w-full px-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none h-20 bg-no-repeat bg-transparent pr-8 appearance-none"
           value={rooms}
           onChange={(e) => setRooms(e.target.value)}
           style={{
@@ -55,12 +62,29 @@ function PropertySearch() {
       <button
         type="button"
         className="flex w-full items-center justify-center px-4 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2"
+        onClick={handleSearch} // Chame a função handleSearch ao clicar no botão
       >
         <SearchIcon className="h-7 mr-2" />
         Buscar Imóveis
       </button>
+
+      {/* Aqui você pode exibir mensagens de carregamento, erro ou endereço retornado pelo hook useCepSearch */}
+      {loading && <p>Carregando...</p>}
+      {error && <p>{error}</p>}
+      {address.cep && (
+        <div>
+          <p>Endereço encontrado:</p>
+          <p>CEP: {address.cep}</p>
+          <p>Logradouro: {address.street}</p>
+          <p>Bairro: {address.neighborhood}</p>
+          <p>Cidade: {address.city}</p>
+          <p>Estado: {address.state}</p>
+        </div>
+      )}
+      {/* Adicione uma mensagem para quando nenhum endereço for encontrado */}
+      {!loading && !error && !address.cep && <p>Nenhum endereço encontrado.</p>}
     </div>
-  )
+  );
 }
 
-export default PropertySearch
+export default PropertySearch;
