@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { SearchIcon } from '@heroicons/react/solid';
 import { CiLocationOn } from 'react-icons/ci';
 import { TbBed } from 'react-icons/tb';
@@ -9,13 +9,39 @@ function PropertySearch() {
   const [rooms, setRooms] = useState('');
   const { loading, error, address, searchAddressByCep } = useCepSearch();
 
+  const addressInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src =
+      'https://maps.googleapis.com/maps/api/js?key=AIzaSyC-oyhsVGRK9uMQfDyabBOS56gMJlGj1Mc&libraries=places'
+    script.async = true
+    document.body.appendChild(script)
+
+    script.addEventListener('load', () => {
+      const addressAutocomplete = new window.google.maps.places.Autocomplete(
+        addressInputRef.current!,
+        {
+          componentRestrictions: { country: 'BR' },
+        }
+      )
+      addressAutocomplete.addListener('place_changed', () => {
+        const nearPlace = addressAutocomplete.getPlace()
+      })
+    })
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
   const handleSearch = () => {
     // Chamando a função correta para buscar o endereço com base no CEP fornecido
     searchAddressByCep(location);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-4">
+    <div className="flex flex-col items-center justify-center p-4 relative">
       <div className="mb-6 w-full relative">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 text-sm font-bold text-gray-700">
           <CiLocationOn className="h-5 w-5 mb-6 mt-3 text-gray-400" />
@@ -26,6 +52,7 @@ function PropertySearch() {
           type="text"
           placeholder="Qual é a Localização?"
           className="pl-10 mt-3 block w-full px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none h-20"
+          ref={addressInputRef}
           style={{ padding: '2rem 1rem', paddingTop: '3.5rem' }}
           value={location}
           onChange={(e) => setLocation(e.target.value)}
@@ -50,12 +77,11 @@ function PropertySearch() {
             backgroundPosition: 'right 1.5rem top 20%',
           }}
         >
-          <option value="">Quantos Quartos?</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+          <option value="1">Todos</option>
+          <option value="2">1+</option>
+          <option value="3">2+</option>
+          <option value="4">3+</option>
+          <option value="5">4+</option>
         </select>
       </div>
 
@@ -65,24 +91,8 @@ function PropertySearch() {
         onClick={handleSearch} // Chame a função handleSearch ao clicar no botão
       >
         <SearchIcon className="h-7 mr-2" />
-        Buscar Imóveis
+          Buscar Imóveis
       </button>
-
-      {/* Aqui você pode exibir mensagens de carregamento, erro ou endereço retornado pelo hook useCepSearch */}
-      {loading && <p>Carregando...</p>}
-      {error && <p>{error}</p>}
-      {address.cep && (
-        <div>
-          <p>Endereço encontrado:</p>
-          <p>CEP: {address.cep}</p>
-          <p>Logradouro: {address.street}</p>
-          <p>Bairro: {address.neighborhood}</p>
-          <p>Cidade: {address.city}</p>
-          <p>Estado: {address.state}</p>
-        </div>
-      )}
-      {/* Adicione uma mensagem para quando nenhum endereço for encontrado */}
-      {!loading && !error && !address.cep && <p>Nenhum endereço encontrado.</p>}
     </div>
   );
 }

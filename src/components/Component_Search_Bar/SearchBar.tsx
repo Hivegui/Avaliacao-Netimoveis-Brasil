@@ -33,7 +33,7 @@ function SearchBar() {
   }, [])
 
   return (
-    <div className="flex w-full mb-30 bg-white rounded-full overflow-hidden mt-5 relative px-2 py-2">
+    <div className="w-full mb-30 bg-white rounded-full overflow-hidden mt-5 relative px-2 py-2 md:hidden block">
       {/* Campo de Localização */}
       <div className="relative w-90 mr-2">
         <div className="h-17 flex items-center">
