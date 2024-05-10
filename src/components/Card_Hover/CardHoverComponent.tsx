@@ -109,74 +109,73 @@ const CardHover = () => {
 
   return (
     <div className="relative bg-gray-100 dark:bg-black">
-  <div className="inset-0 flex justify-start items-center ml-60 xl:mr-40 hidden xl:block">
-    <div className="bg-white dark:bg-boxdark-2 p-6 ml-6 rounded-xl flex-col justify-center items-center">
-      <div className="p-8 justify-center items-center">
-        <div className="flex justify-center items-center space-x-4 mb-4">
-          <Slider
-            ref={(slider) => (sliderRef = slider)}
-            {...settings}
-            style={{ width: '100%', maxWidth: '400px', margin: 'auto' }}
-          >
-            {/* Alugar Imóvel */}
-            <button
-              className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
-                content === 'alugar' ? 'border-b-2 border-orange-500' : ''
-              }`}
-              onClick={() => setContent('alugar')}
-            >
-              <div className="flex flex-col items-center">
-                <LiaKeySolid className="h-6 w-6 mb-1 text-gray-600 transform rotate-[90deg]" />
-                <span>
-                  Alugar <br /> Imóvel
-                </span>
-              </div>
-            </button>
+      <div className="inset-0 justify-start items-center ml-60 xl:mr-40 hidden xl:block">
+        <div className="bg-white dark:bg-boxdark-2 p-6 ml-6 rounded-xl flex-col justify-center items-center">
+          <div className="p-8 justify-center items-center">
+            <div className="flex justify-center items-center space-x-4 mb-4">
+              <Slider
+                ref={(slider) => (sliderRef = slider)}
+                {...settings}
+                style={{ width: '100%', maxWidth: '400px', margin: 'auto' }}
+              >
+                {/* Alugar Imóvel */}
+                <button
+                  className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
+                    content === 'alugar' ? 'border-b-2 border-orange-500' : ''
+                  }`}
+                  onClick={() => setContent('alugar')}
+                >
+                  <div className="flex flex-col items-center">
+                    <LiaKeySolid className="h-6 w-6 mb-1 text-gray-600 transform rotate-[90deg]" />
+                    <span>
+                      Alugar <br /> Imóvel
+                    </span>
+                  </div>
+                </button>
 
-            {/* Comprar Imóvel */}
-            <button
-              className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
-                content === 'comprar' ? 'border-b-2 border-orange-500' : ''
-              }`}
-              onClick={() => setContent('comprar')}
-            >
-              <div className="flex flex-col items-center">
-                <PiCurrencyDollarLight className="h-6 w-6 mb-1 text-gray-600" />
-                <span>
-                  Comprar <br /> Imóvel
-                </span>
-              </div>
-            </button>
+                {/* Comprar Imóvel */}
+                <button
+                  className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
+                    content === 'comprar' ? 'border-b-2 border-orange-500' : ''
+                  }`}
+                  onClick={() => setContent('comprar')}
+                >
+                  <div className="flex flex-col items-center">
+                    <PiCurrencyDollarLight className="h-6 w-6 mb-1 text-gray-600" />
+                    <span>
+                      Comprar <br /> Imóvel
+                    </span>
+                  </div>
+                </button>
 
-            {/* Anunciar Imóvel */}
-            <button
-              className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
-                content === 'anunciar' ? 'border-b-2 border-orange-500' : ''
-              }`}
-              onClick={() => setContent('anunciar')}
-            >
-              <div className="flex flex-col items-center">
-                <TbHomeMove className="h-6 w-6 mb-1 text-gray-600" />
-                <span>Anunciar Imóvel</span>
-              </div>
-            </button>
-          </Slider>
-        </div>
-        {/* Conteúdo */}
-        <div className="text-center h-60 w-auto overflow-hidden">
-          {content === 'alugar'
-            ? alugarContent
-            : content === 'comprar'
-            ? comprarContent
-            : content === 'anunciar'
-            ? anunciarContent
-            : null}
+                {/* Anunciar Imóvel */}
+                <button
+                  className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
+                    content === 'anunciar' ? 'border-b-2 border-orange-500' : ''
+                  }`}
+                  onClick={() => setContent('anunciar')}
+                >
+                  <div className="flex flex-col items-center">
+                    <TbHomeMove className="h-6 w-6 mb-1 text-gray-600" />
+                    <span>Anunciar Imóvel</span>
+                  </div>
+                </button>
+              </Slider>
+            </div>
+            {/* Conteúdo */}
+            <div className="text-center h-60 w-auto overflow-hidden">
+              {content === 'alugar'
+                ? alugarContent
+                : content === 'comprar'
+                ? comprarContent
+                : content === 'anunciar'
+                ? anunciarContent
+                : null}
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
   )
 }
 

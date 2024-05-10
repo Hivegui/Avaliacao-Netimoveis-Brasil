@@ -123,7 +123,7 @@ const Home = () => {
         </div>
 
         {/* Componente de Carrossel */}
-        <div className="overflow-x-auto overflow-x-hidden sm-px-1 overflow-y-hidden mt-5 bg-white dark:bg-black mb-25 xl:overflow-x-hidden sm-px-1 hidden sm:block">
+        <div className="overflow-x-auto overflow-x-hidden sm-px-1 overflow-y-hidden mt-5 bg-white dark:bg-black mb-25 xl:overflow-x-hidden sm-px-1 block">
           <Carousel />
         </div>
       </div>

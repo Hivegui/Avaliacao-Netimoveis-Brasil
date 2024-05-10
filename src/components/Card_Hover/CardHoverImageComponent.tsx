@@ -145,13 +145,13 @@ const CardHoverImage = () => {
       </header>
 
       <div className="absolute inset-0 flex justify-start items-center sm:ml-60 md:ml-60">
-        <div className="bg-white dark:bg-boxdark-2 p-6 md:ml-6 rounded-none sm:rounded-xl flex flex-col justify-center items-center md:flex">
+        <div className="bg-white dark:bg-boxdark-2 p-2 md:ml-6 rounded-none sm:rounded-xl flex flex-col justify-center items-center md:flex min-w-lg">
           <div className="p-8 justify-center items-center">
-            <div className="flex justify-center items-center space-x-4">
+            <div className="flex justify-center items-center space-x-4 min-w-sm">
               <Slider
                 ref={(slider) => (sliderRef = slider)}
                 {...settings}
-                style={{ width: '100%', maxWidth: '400px', margin: 'auto' }}
+                className="w-full max-w-[300px] lg:max-w-[400px] mx-auto"
               >
                 {/* Botões */}
                 <button
