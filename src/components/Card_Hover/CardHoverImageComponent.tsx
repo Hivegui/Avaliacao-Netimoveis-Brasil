@@ -41,7 +41,7 @@ const CardHoverImage = () => {
   // Definições de conteúdo para cada botão
   const solContent = (
     <>
-      <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
+      <h2 className="text-2xl mt-10 font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
         Sol que ilumina <br /> as suas manhãs
       </h2>
       <p className="text-gray-600 dark:text-white mb-6 text-justify">
@@ -56,23 +56,8 @@ const CardHoverImage = () => {
 
   const petContent = (
     <>
-      <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
+      <h2 className="text-2xl mt-10 font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
         Aceitamos seu <br /> Pet
-      </h2>
-      <p className="text-gray-600 mb-6 text-justify dark:text-white">
-        Sed ut perspiciatis unde omnis iste natus <br /> unde omnis iste natus
-        error sit.
-      </p>
-      <button className="flex font-semibold text-purple-700 border border-purple-700 px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white">
-        Buscar Imóveis
-      </button>
-    </>
-  )
-
-  const varandaContent = (
-    <>
-      <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
-        Linda vista da <br /> Varanda
       </h2>
       <p className="text-gray-600 mb-6 text-justify dark:text-white">
         Sed ut perspiciatis unde omnis iste natus <br /> unde omnis iste natus
@@ -86,7 +71,7 @@ const CardHoverImage = () => {
 
   const onibusContent = (
     <>
-      <h2 className="text-2xl font-extrabold text-gray-800 mb-4 text-justify dark:text-white">
+      <h2 className="text-2xl  mt-10 font-extrabold text-gray-800 mb-4 text-justify dark:text-white">
         Ônibus na sua <br /> Porta
       </h2>
       <p className="text-gray-600 mb-6 text-justify dark:text-white">
@@ -99,9 +84,25 @@ const CardHoverImage = () => {
     </>
   )
 
+  const varandaContent = (
+    <>
+      <h2 className="text-2xl mt-10 font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
+        Linda vista da <br /> Varanda
+      </h2>
+      <p className="text-gray-600 mb-6 text-justify dark:text-white">
+        Sed ut perspiciatis unde omnis iste natus <br /> unde omnis iste natus
+        error sit.
+      </p>
+      <button className="flex font-semibold text-purple-700 border border-purple-700 px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white">
+        Buscar Imóveis
+      </button>
+    </>
+  )
+
+
   const quintalContent = (
     <>
-      <h2 className="text-2xl font-extrabold text-gray-800 mb-4 text-justify dark:text-white">
+      <h2 className="text-2xl mt-10 font-extrabold text-gray-800 mb-4 text-justify dark:text-white">
         Imóveis com <br /> Quintal
       </h2>
       <p className="text-gray-600 mb-6 text-justify dark:text-white">
@@ -116,7 +117,7 @@ const CardHoverImage = () => {
 
   const internetContent = (
     <>
-      <h2 className="text-2xl font-extrabold text-gray-800 mb-4 text-justify dark:text-white">
+      <h2 className="text-2xl mt-10 font-extrabold text-gray-800 mb-4 text-justify dark:text-white">
         Imóveis com <br /> Internet
       </h2>
       <p className="text-gray-600 mb-6 text-justify dark:text-white">
