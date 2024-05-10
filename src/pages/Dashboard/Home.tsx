@@ -48,7 +48,7 @@ const Home = () => {
           </h1>
 
           {/* Componente da Barra de pesquisa */}
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <SearchBar />
           </div>
         </div>
@@ -128,8 +128,8 @@ const Home = () => {
         </div>
       </div>
       {/* Título - Encontre um lugar que é a sua cara */}
-      <div className="bg-gray-100 dark:bg-black dark:text-white flex flex-col sm:flex-row sm:text-bold sm:ml-0 sm:text-left sm:mb-10">
-        <div className="p-4 sm:ml-60 mb-70 mt-20">
+      <div className="bg-gray-100 dark:bg-black dark:text-white flex flex-col lg:flex-row lg:text-bold lg:ml-0 lg:text-left lg:mb-10">
+        <div className="p-4 lg:ml-60 mb-70 mt-20">
           <h1 className="text-4xl lg:text-5xl text-gray-600 font-medium mb-4">
             <span className="block">
               Encontre um lugar <br />
@@ -137,8 +137,8 @@ const Home = () => {
             </span>
           </h1>
 
-          <div className="text-2xl font-extrabold mb-4 md:hidden text-left sm:top-50">
-            <div className="sm:hidden mt-15 ml-5">
+          <div className="text-2xl font-extrabold mb-4 md:hidden text-left lg:top-50">
+            <div className="lg:hidden mt-15 ml-5">
               <div className="relative">
                 <h1 className="text-gray-500 dark:text-white pl-3 border-l-2 border-orange-300">
                   Alugue <br />
@@ -147,12 +147,12 @@ const Home = () => {
               </div>
             </div>
 
-            <h1 className="block lg:hidden mt-5 ml-7 text-base font-normal sm:mb-0">
+            <h1 className="block lg:hidden mt-5 ml-7 text-base font-normal lg:mb-0">
               Alugue imóveis qualificados e sem <br /> repitição. Sed ut
               perspiciatis unde <br /> omnis iste natus error sit.
             </h1>
 
-            <button className="flex font-medium text-sm text-purple-600 border border-purple-600 px-3 py-2 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white mt-8 ml-6 sm:ml-0">
+            <button className="flex font-medium text-sm text-purple-600 border border-purple-600 px-3 py-2 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white mt-8 ml-6 lg:ml-0">
               Ver imóveis para Alugar
             </button>
 
@@ -172,8 +172,8 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="text-2xl font-extrabold mb-4 md:hidden text-left sm:top-50">
-            <div className="sm:hidden mt-15 ml-5">
+          <div className="text-2xl font-extrabold mb-4 md:hidden text-left lg:top-50">
+            <div className="lg:hidden mt-15 ml-5">
               <div className="relative">
                 <h1 className="text-gray-500 dark:text-white pl-3 border-l-2 border-orange-300">
                   Compre <br />
@@ -182,12 +182,12 @@ const Home = () => {
               </div>
             </div>
 
-            <h1 className="block lg:hidden mt-5 ml-7 text-base font-normal sm:mb-0">
+            <h1 className="block lg:hidden mt-5 ml-7 text-base font-normal lg:mb-0">
               Compre seu imóvel com segurança e <br /> agilidade. Sed ut perspiciatis
               unde <br /> omnis iste natus error sit.
             </h1>
 
-            <button className="flex font-medium text-sm text-purple-600 border border-purple-600 px-3 py-2 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white mt-8 ml-6 sm:ml-0">
+            <button className="flex font-medium text-lg text-purple-600 border border-purple-600 px-3 py-2 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white mt-8 ml-6 lg:ml-0">
               Ver imóveis para Comprar
             </button>
 
@@ -207,7 +207,7 @@ const Home = () => {
             </div>
           </div>
 
-          <p className="text-xl mt-10 hidden sm:block">
+          <p className="text-xl mt-10 hidden lg:block">
             A Netimóveis te oferece uma experiência ágil e segura na <br /> hora
             de comprar ou alugar seu imóvel. Seja de maneira <br /> digital ou
             física, fazemos a diferença neste momento tão <br /> importante que
