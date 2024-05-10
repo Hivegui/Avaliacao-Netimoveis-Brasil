@@ -7,8 +7,7 @@ import { LiaKeySolid } from 'react-icons/lia'
 import { PiCurrencyDollarLight } from 'react-icons/pi'
 import { TbHomeMove } from 'react-icons/tb'
 import { FaChevronRight } from 'react-icons/fa'
-import { IoArrowForwardOutline } from "react-icons/io5";
-
+import { IoArrowForwardOutline } from 'react-icons/io5'
 
 const CardHover = () => {
   const [content, setContent] = useState('alugar') // Estado para controlar o conteúdo exibido
@@ -33,6 +32,7 @@ const CardHover = () => {
       <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
         Alugar sem complicação
       </h2>
+
       <p className="text-gray-600 text-sm dark:text-white mb-6 text-justify">
         Alugue imóveis qualificados e sem repetição. Sed ut <br />
         perspiciatis unde omnis iste natus error sit.
@@ -110,7 +110,7 @@ const CardHover = () => {
   return (
     <div className="relative bg-gray-100 dark:bg-black">
       <div className="abalugarute inset-0 flex justify-start items-center ml-60">
-        <div className="bg-white dark:bg-boxdark-2 p-6 ml-6 rounded-xl flex flex-col justify-center items-center">
+        <div className="bg-white dark:bg-boxdark-2 p-6 ml-6 rounded-xl flex-col justify-center items-center hidden sm:block">
           <div className="p-8 justify-center items-center">
             <div className="flex justify-center items-center space-x-4 mb-4">
               <Slider
