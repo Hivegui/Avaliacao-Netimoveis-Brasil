@@ -221,13 +221,15 @@ const Home = () => {
       </div>
 
       {/* Componente de Hover */}
-      <CardHoverImage />
+      <div className='mb-20'>
+        <CardHoverImage />
+      </div> 
 
       <div>
         {/* Parte abaixo de 1280px */}
         <div className="block md:hidden">
           <div>
-            <h1 className="mt-15 mb-5 ml-5 text-orange-500 text-base font-bold">
+            <h1 className="mt-30 mb-5 ml-5 text-orange-500 text-base font-bold">
               Quer vender?
             </h1>
             <p className="ml-5 text-gray-600 text-3xl font-bold">
@@ -246,13 +248,12 @@ const Home = () => {
               Saiba quanto vale seu imóvel
             </Link>
           </div>
-          <div className="ml-5 mr-5">
-            {' '}
-            {/* Div adicionada para aplicar margens igualmente distribuídas */}
+          <div className="mt-10 ml-5 mr-5">
             <img
               src={AnuncieGratis}
               alt="Anúncio Grátis"
-              className="w-auto h-450px rounded-l-lg object-cover mt-5" // Removida a margem direita aqui
+              className="w-screen h-450px rounded-l-lg object-cover mt-5"
+              style={{ marginLeft: '-1rem', marginRight: '-1rem' }}
             />
           </div>
         </div>
