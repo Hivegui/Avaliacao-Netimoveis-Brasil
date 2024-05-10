@@ -36,7 +36,6 @@ function PropertySearch() {
   }, [])
 
   const handleSearch = () => {
-    // Chamando a função correta para buscar o endereço com base no CEP fornecido
     searchAddressByCep(location);
   };
 
@@ -88,7 +87,7 @@ function PropertySearch() {
       <button
         type="button"
         className="flex w-full items-center justify-center px-4 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2"
-        onClick={handleSearch} // Chame a função handleSearch ao clicar no botão
+        onClick={handleSearch}
       >
         <SearchIcon className="h-7 mr-2" />
           Buscar Imóveis

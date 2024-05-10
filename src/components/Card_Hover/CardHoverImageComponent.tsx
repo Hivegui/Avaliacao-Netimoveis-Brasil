@@ -130,7 +130,7 @@ const CardHoverImage = () => {
   )
 
   return (
-    <div className="relative bg-white dark:bg-black -mt-10">
+    <div className="relative bg-white dark:bg-black">
       {/* Background da imagem */}
       <header className="items-center justify-center relative">
         <img
@@ -144,10 +144,10 @@ const CardHoverImage = () => {
         />
       </header>
 
-      <div className="absolute inset-0 flex justify-start items-center ml-60">
-        <div className="bg-white dark:bg-boxdark-2 p-6 ml-6 rounded-xl flex flex-col justify-center items-center">
+      <div className="absolute inset-0 flex justify-start items-center sm:ml-60 md:ml-60">
+        <div className="bg-white dark:bg-boxdark-2 p-6 md:ml-6 rounded-none sm:rounded-xl flex flex-col justify-center items-center md:flex">
           <div className="p-8 justify-center items-center">
-            <div className="flex justify-center items-center space-x-4 mb-4">
+            <div className="flex justify-center items-center space-x-4">
               <Slider
                 ref={(slider) => (sliderRef = slider)}
                 {...settings}
@@ -227,12 +227,15 @@ const CardHoverImage = () => {
                     </span>
                   </div>
                 </button>
+
                 {/* Com Boa Internet */}
                 <button
                   className={`text-black-2 font-semibold py-2 px-4 hover:text-orange-500 dark:text-white dark:hover:text-orange-500 focus:outline-none flex flex-col items-center ${
                     content === 'internet' ? 'border-b-2 border-orange-500' : ''
                   }`}
-                  onClick={() => handleContentChange('internet', BannerInternet)}
+                  onClick={() =>
+                    handleContentChange('internet', BannerInternet)
+                  }
                 >
                   <div className="flex flex-col items-center">
                     <MdCellWifi className="h-6 w-6 mb-1" />

@@ -183,8 +183,8 @@ const Home = () => {
             </div>
 
             <h1 className="block lg:hidden mt-5 ml-7 text-base font-normal lg:mb-0">
-              Compre seu imóvel com segurança e <br /> agilidade. Sed ut perspiciatis
-              unde <br /> omnis iste natus error sit.
+              Compre seu imóvel com segurança e <br /> agilidade. Sed ut
+              perspiciatis unde <br /> omnis iste natus error sit.
             </h1>
 
             <button className="flex font-medium text-lg text-purple-600 border border-purple-600 px-3 py-2 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white mt-8 ml-6 lg:ml-0">
@@ -223,38 +223,76 @@ const Home = () => {
       {/* Componente de Hover */}
       <CardHoverImage />
 
-      <div className="flex justify-center items-center h-screen bg-white dark:bg-black">
-        {/* Banner com imagem de pesquisa */}
-        <div className="flex flex-col-2 mt-0 items-start bg-white border border-gray-300 rounded-lg shadow">
-          <img
-            src={AnuncieGratis}
-            alt="Anúncio Grátis"
-            className="w-auto h-450px rounded-l-lg object-cover"
-            style={{ width: '950px', height: '550px' }}
-          />
-          <div className="p-8">
-            <h2 className="text-sm font-extrabold text-orange-500 mb-4">
-              Quer Vender ou Alugar?
-            </h2>
-            <p className="text-gray-600 text-2xl font-extrabold mb-6 dark:text-black-2">
+      <div>
+        {/* Parte abaixo de 1280px */}
+        <div className="block md:hidden">
+          <div>
+            <h1 className="mt-15 mb-5 ml-5 text-orange-500 text-base font-bold">
+              Quer vender?
+            </h1>
+            <p className="ml-5 text-gray-600 text-3xl font-bold">
               Anuncie grátis <br /> para mais de 100 mil <br /> pessoas todos os
               dias.
             </p>
-            <button className="border-2 mt-55 font-bold border-text-purple-800 text-purple-700 rounded-lg px-4 py-1 mr-2 transition-colors dark:text-blue-500">
-              Anunciar Imóvel
-            </button>
-            <div className="flex items-center mt-4">
-              <Link
-                to="/"
-                className="text-black-2 font-bold hover:underline block text-center mr-2"
-              >
-                Saiba quanto vale seu imóvel
-              </Link>
-              <FiArrowRight className="text-black-2 w-6 h-6" />
+          </div>
+          <button className="border mt-10 ml-5 font-bold border-text-purple-800 text-purple-700 rounded-lg px-3 py-2 transition-colors dark:text-blue-500">
+            Anunciar Imóvel
+          </button>
+          <div className="flex items-center mt-4">
+            <Link
+              to="/"
+              className="text-gray-600 ml-5 border-b border-gray-400 font-bold hover:underline block text-center mr-2"
+            >
+              Saiba quanto vale seu imóvel
+            </Link>
+          </div>
+          <div className="ml-5 mr-5">
+            {' '}
+            {/* Div adicionada para aplicar margens igualmente distribuídas */}
+            <img
+              src={AnuncieGratis}
+              alt="Anúncio Grátis"
+              className="w-auto h-450px rounded-l-lg object-cover mt-5" // Removida a margem direita aqui
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden xl:block">
+        <div className="flex justify-center items-center h-screen bg-white dark:bg-black">
+          {/* Banner com imagem de pesquisa */}
+          <div className="flex flex-col-2 mt-0 items-start bg-white border border-gray-300 rounded-lg shadow">
+            <img
+              src={AnuncieGratis}
+              alt="Anúncio Grátis"
+              className="w-auto h-450px rounded-l-lg object-cover"
+              style={{ width: '950px', height: '550px' }}
+            />
+            <div className="p-8">
+              <h1 className="text-sm font-extrabold text-orange-500 mb-4">
+                Quer Vender ou Alugar?
+              </h1>
+              <p className="text-gray-600 text-2xl font-extrabold mb-6 dark:text-black-2">
+                Anuncie grátis <br /> para mais de 100 mil <br /> pessoas todos
+                os dias.
+              </p>
+              <button className="border-2 mt-55 font-bold border-text-purple-800 text-purple-700 rounded-lg px-4 py-1 mr-2 transition-colors dark:text-blue-500">
+                Anunciar Imóvel
+              </button>
+              <div className="flex items-center mt-4">
+                <Link
+                  to="/"
+                  className="text-black-2 font-bold hover:underline block text-center mr-2"
+                >
+                  Saiba quanto vale seu imóvel
+                </Link>
+                <FiArrowRight className="text-black-2 w-6 h-6" />
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div className="grid grid-cols-1 px-75">
         <h1 className="text-2xl text-left text-black-2 font-extrabold ml-5 dark:text-white">
           Prontos para te Receber em mais de 20 estados
