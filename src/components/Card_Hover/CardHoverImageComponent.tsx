@@ -69,9 +69,10 @@ const CardHoverImage = () => {
     </>
   )
 
+  
   const onibusContent = (
     <>
-      <h2 className="text-2xl  mt-10 font-extrabold text-gray-800 mb-4 text-justify dark:text-white">
+      <h2 className="text-2xl mt-10 font-extrabold text-gray-800 mb-4 text-justify dark:text-white">
         Ônibus na sua <br /> Porta
       </h2>
       <p className="text-gray-600 mb-6 text-justify dark:text-white">
@@ -98,7 +99,6 @@ const CardHoverImage = () => {
       </button>
     </>
   )
-
 
   const quintalContent = (
     <>
@@ -145,14 +145,14 @@ const CardHoverImage = () => {
         />
       </header>
 
-      <div className="absolute inset-0 flex justify-start items-center sm:ml-60 md:ml-60">
-        <div className="bg-white dark:bg-boxdark-2 p-2 md:ml-6 rounded-none sm:rounded-xl flex flex-col justify-center items-center md:flex min-w-lg">
+      <div className="absolute inset-0 flex justify-start items-center md:ml-60">
+        <div className="bg-white dark:bg-boxdark-2 p-2 md:ml-6 rounded-none sm:rounded-xl flex flex-col justify-center items-center min-w-lg">
           <div className="p-8 justify-center items-center">
             <div className="flex justify-center items-center space-x-4 min-w-sm">
               <Slider
                 ref={(slider) => (sliderRef = slider)}
                 {...settings}
-                className="w-full max-w-[300px] lg:max-w-[400px] mx-auto"
+                className="w-full max-w-[300px] lg:max-w-[400px] mx-auto border-b-2 border-gray-300 lg:border-none"
               >
                 {/* Botões */}
                 <button
@@ -258,9 +258,9 @@ const CardHoverImage = () => {
                 : content === 'pet'
                 ? petContent
                 : content === 'onibus'
-                ? varandaContent
-                : content === 'varanda'
                 ? onibusContent
+                : content === 'varanda'
+                ? varandaContent
                 : content === 'quintal'
                 ? quintalContent
                 : content === 'internet'
