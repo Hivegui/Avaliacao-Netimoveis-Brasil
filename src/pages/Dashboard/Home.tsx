@@ -41,7 +41,7 @@ const Home = () => {
 
         {/* Contêiner flexível para centralizar conteúdo do banner principal */}
         <div className="absolute inset-0 flex flex-col justify-center items-start text-left text-white bg-opacity-75 px-14 md:items-center md:text-center">
-          <h1 className="text-lg mb-0 font-bold block">
+          <h1 className="text-xl mb-0 font-bold block">
             <span className="md:inline-block">Vende.</span>
             <span className="block md:inline-block">Aluga.</span>
             <span className="block md:inline-block">Conecta.</span>
