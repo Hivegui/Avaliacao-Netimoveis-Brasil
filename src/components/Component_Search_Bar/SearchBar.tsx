@@ -1,21 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { LocationMarkerIcon } from '@heroicons/react/solid';
-import { BiSearchAlt } from 'react-icons/bi';
-import { TbBed } from 'react-icons/tb';
+import React, { useState, useEffect, useRef } from 'react'
+import { LocationMarkerIcon } from '@heroicons/react/solid'
+import { BiSearchAlt } from 'react-icons/bi'
+import { TbBed } from 'react-icons/tb'
 
 function SearchBar() {
-  const [showLabel, setShowLabel] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('Todos');
-  const [roomSearch, setRoomSearch] = useState('');
-  const addressInputRef = useRef(null);
-  const dropdownRef = useRef(null); // Referência para o dropdown
+  const [showLabel, setShowLabel] = useState(false)
+  const [selectedOption, setSelectedOption] = useState('Todos')
+  const [roomSearch, setRoomSearch] = useState('')
+  const addressInputRef = useRef(null)
+  const dropdownRef = useRef(null) // Referência para o dropdown
 
   useEffect(() => {
-    const script = document.createElement('script');
+    const script = document.createElement('script')
     script.src =
-      'https://maps.googleapis.com/maps/api/js?key=AIzaSyC-oyhsVGRK9uMQfDyabBOS56gMJlGj1Mc&libraries=places';
-    script.async = true;
-    document.body.appendChild(script);
+      'https://maps.googleapis.com/maps/api/js?key=AIzaSyC-oyhsVGRK9uMQfDyabBOS56gMJlGj1Mc&libraries=places'
+    script.async = true
+    document.body.appendChild(script)
 
     script.addEventListener('load', () => {
       const addressAutocomplete = new window.google.maps.places.Autocomplete(
@@ -23,41 +23,41 @@ function SearchBar() {
         {
           componentRestrictions: { country: 'BR' },
         }
-      );
+      )
       addressAutocomplete.addListener('place_changed', () => {
-        const nearPlace = addressAutocomplete.getPlace();
-      });
-    });
+        const nearPlace = addressAutocomplete.getPlace()
+      })
+    })
 
     // Adiciona event listener para fechar o dropdown ao clicar fora dele
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('click', handleClickOutside)
 
     return () => {
-      document.body.removeChild(script);
+      document.body.removeChild(script)
       // Remove event listener ao desmontar o componente
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [])
 
   const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setRoomSearch(option !== 'Todos' ? `${option} Quartos` : 'Todos os Quartos');
-  };
+    setSelectedOption(option)
+    setRoomSearch(option !== 'Todos' ? `${option} Quartos` : 'Todos os Quartos')
+  }
 
   // Função para verificar se o clique foi dentro ou fora do dropdown
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setShowLabel(true); // Fecha o dropdown se o clique foi fora dele
+      setShowLabel(true) // Fecha o dropdown se o clique foi fora dele
     }
-  };
+  }
 
-  const options = ['Todos', '1+', '2+', '3+', '4+'];
+  const options = ['Todos', '1+', '2+', '3+', '4+']
 
   return (
     <div className="flex items-center justify-center py-5">
       <div className="flex border-2 rounded-full bg-white">
-        <button className="flex items-center justify-center rounded-full px-4">
-          <LocationMarkerIcon className="h-5 w-5 text-gray-400 hover:text-gray-300" />
+        <button className="flex items-center justify-center rounded-full px-5">
+          <LocationMarkerIcon className="h-5 w-5 text-gray-400" />
         </button>
         <input
           className="px-4 py-3 w-65 rounded-full text-black-2 hover:bg-gray-200 transition duration-300 focus:outline-none"
@@ -90,7 +90,9 @@ function SearchBar() {
               ref={dropdownRef} // Referência para o dropdown
               className="absolute mt-80 py-5 px-10 bg-white shadow-lg rounded-xl text-gray-500 transition duration-300 focus:outline-none pl-4 ml-8"
             >
-              <h1 className="mb-2 font-medium flex text-left">Número de Quartos</h1>
+              <h1 className="mb-2 font-medium flex text-left">
+                Número de Quartos
+              </h1>
               <div className="flex">
                 {options.map((option, index) => (
                   <button
@@ -130,16 +132,20 @@ function SearchBar() {
             </div>
           )}
         </div>
-        <button
-          className="text-white bg-orange-500 border-l rounded-full px-6 py-4 flex items-center"
-          onClick={() => setShowLabel(false)}
-        >
-          <BiSearchAlt className="h-5 w-5 mr-2" />
-          <span>Buscar</span>
-        </button>
+        <div className='p-2'>
+          <button
+            className="text-white bg-orange-500 hover:opacity-90 border-l rounded-full px-5 py-5 flex items-center relative"
+            onClick={() => setShowLabel(false)}
+          >
+            <BiSearchAlt className="h-5 w-5" />
+            <span className="absolute right-0 opacity-0 transition-opacity duration-300">
+              Buscar
+            </span>
+          </button>
+        </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default SearchBar;
+export default SearchBar

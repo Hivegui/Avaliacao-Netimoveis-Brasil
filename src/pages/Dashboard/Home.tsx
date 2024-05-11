@@ -131,7 +131,7 @@ const Home = () => {
       </div>
       {/* Título - Encontre um lugar que é a sua cara */}
       <div className="bg-gray-100 dark:bg-boxdark-2 dark:text-white flex flex-col lg:flex-row lg:text-bold lg:ml-0 lg:text-left lg:mb-10">
-      <div className="p-4 lg:ml-60 mt-20 lg:mb-70 md:mb-0">
+        <div className="p-4 lg:ml-60 mt-20 lg:mb-70 md:mb-0">
           <h1 className="text-4xl lg:text-5xl text-gray-600 font-medium mb-4">
             <span className="block dark:text-white">
               Encontre um lugar <br />
@@ -575,7 +575,9 @@ const Home = () => {
             <div className="flex items-start">
               <FaCircle className="mt-9 mr-2 text-gray-400 text-4xl dark:text-gray-900" />
               <div className="font-sm mt-10 dark:text-black-2">
-                <strong className='dark:text-white'>Motivo para negociar com a Netimóveis:</strong>
+                <strong className="dark:text-white">
+                  Motivo para negociar com a Netimóveis:
+                </strong>
                 <p className="mt-5 dark:text-white">
                   Aqui é desenvolvido esse motivo para negociar com a
                   Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
@@ -763,7 +765,10 @@ const Home = () => {
           <div>
             <div className="grid grid-cols-2 sm:grid-cols-4 ml-10 sm:ml-40">
               <div className="mr-10 mb-10">
-                <Link to="/" className="font-bold text-gray-600 text-lg dark:text-white">
+                <Link
+                  to="/"
+                  className="font-bold text-gray-600 text-lg dark:text-white"
+                >
                   Alugar
                 </Link>
                 <ul className="mt-5 leading-10 dark:text-gray-300">
@@ -782,7 +787,10 @@ const Home = () => {
                 </ul>
               </div>
               <div className="mr-10 mb-10">
-                <Link to="/" className="font-bold text-gray-600 text-lg dark:text-white">
+                <Link
+                  to="/"
+                  className="font-bold text-gray-600 text-lg dark:text-white"
+                >
                   Comprar
                 </Link>
                 <ul className="mt-5 leading-10 dark:text-gray-300">
@@ -803,7 +811,10 @@ const Home = () => {
                 </ul>
               </div>
               <div className="mr-10 mb-5">
-                <Link to="/" className="font-bold text-gray-600 text-lg dark:text-white">
+                <Link
+                  to="/"
+                  className="font-bold text-gray-600 text-lg dark:text-white"
+                >
                   Comercial
                 </Link>
                 <ul className="mt-5 leading-10 dark:text-gray-300">
@@ -832,7 +843,10 @@ const Home = () => {
             <div className="grid grid-cols-1 sm:ml-2 sm:grid-cols-4">
               {/* Coluna 1 */}
               <div className="ml-10 mb-10">
-                <Link to="/" className="font-bold text-blue-900 dark:text-blue-600 text-lg">
+                <Link
+                  to="/"
+                  className="font-bold text-blue-900 dark:text-blue-600 text-lg"
+                >
                   A Netimóveis
                 </Link>
                 <ul className="mt-5 leading-10 dark:text-gray-300">
