@@ -43,10 +43,10 @@ const Home = () => {
 
         {/* Contêiner flexível para centralizar conteúdo do banner principal */}
         <div className="absolute inset-0 flex flex-col justify-center items-start text-left text-white bg-opacity-75 px-14 md:items-center md:text-center">
-          <h1 className="text-xl mb-0 font-bold block">
-            <span className="md:inline-block">Vende.</span>
-            <span className="block md:inline-block">Aluga.</span>
-            <span className="block md:inline-block">Conecta.</span>
+          <h1 className="text-2xl mb-0 font-bold block">
+            <span className="md:inline-block">Vende.&nbsp;</span>
+            <span className="block md:inline-block">Aluga.&nbsp;</span>
+            <span className="block md:inline-block">Conecta. </span>
           </h1>
 
           {/* Componente da Barra de pesquisa */}
@@ -87,7 +87,7 @@ const Home = () => {
         <PropertySearch />
       </div>
 
-      <div className="px-5 bg-white dark:bg-boxdark-2 sm:px-60">
+      <div className="px-5 mt-10 bg-white dark:bg-boxdark-2 sm:px-60">
         <a
           href="/"
           className="text-base py-2 font-bold text-black-2 dark:text-white"
@@ -125,7 +125,7 @@ const Home = () => {
         </div>
 
         {/* Componente de Carrossel */}
-        <div className="overflow-x-auto overflow-x-hidden sm-px-1 overflow-y-hidden mt-5 bg-white dark:bg-boxdark-2 mb-25 xl:overflow-x-hidden sm-px-1 block">
+        <div className="overflow-x-auto overflow-x-hidden sm-px-1 overflow-y-hidden bg-white dark:bg-boxdark-2 mb-25 xl:overflow-x-hidden sm-px-1 block">
           <Carousel />
         </div>
       </div>
@@ -342,7 +342,7 @@ const Home = () => {
           <CarouselEstados />
         </div>
 
-        <div className="md:hidden xl:hidden bg-gray-100">
+        <div className="md:hidden xl:hidden bg-gray-100 dark:bg-boxdark-2">
           {/* Bloco do Banner Portugal */}
           <div className="relative">
             <img
@@ -375,7 +375,7 @@ const Home = () => {
 
           {/* Bloco da frase de efeito e motivos - TELA ABAIXO DE 640PX */}
           <div>
-            <h2 className="text-lg ml-5 mt-10 font-semibold bg-gray-100 dark:text-black-2 dark:bg-boxdark-2">
+            <h2 className="text-lg ml-5 mt-10 font-semibold bg-gray-100 dark:text-white dark:bg-boxdark-2">
               Aqui vai uma frase de efeito
             </h2>
 
@@ -386,8 +386,8 @@ const Home = () => {
                   <div className="absolute mt-10 dark:text-black-2">
                     <FaCircle className="text-gray-400 ml-5 text-2xl dark:text-gray-400" />
                   </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5">
+                  <div className="flex flex-col dark:bg-boxdark-2 dark:text-white">
+                    <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5 dark:text-white">
                       Motivo para negociar com a Netimóveis:
                     </h3>
                     <p className="mt-5 ml-5 mr-5">
@@ -398,12 +398,12 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="absolute mt-10 dark:text-black-2">
+                <div className="flex items-start dark:bg-boxdark-2">
+                  <div className="absolute mt-10 dark:text-white">
                     <FaCircle className="text-gray-400 ml-5 text-2xl dark:text-gray-400" />
                   </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5">
+                  <div className="flex flex-col dark:text-white">
+                    <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5 dark:text-white">
                       Motivo para negociar com a Netimóveis:
                     </h3>
                     <p className="mt-5 ml-5 mr-5">
@@ -414,15 +414,15 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="absolute mt-10 dark:text-black-2">
+                <div className="flex items-start dark:bg-boxdark-2">
+                  <div className="absolute mt-10 dark:text-white">
                     <FaCircle className="text-gray-400 ml-5 text-2xl dark:text-gray-400" />
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5">
+                    <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5 dark:text-white">
                       Motivo para negociar com a Netimóveis:
                     </h3>
-                    <p className="mt-5 ml-5 mr-5">
+                    <p className="mt-5 ml-5 mr-5 dark:text-white">
                       Aqui é desenvolvido esse motivo para negociar com a
                       Netimóveis. ipsum voluptatum quia voluptas sit aspernatur
                       aut odit aut elebanduque
@@ -435,9 +435,9 @@ const Home = () => {
           </div>
 
           {/* Bloco de link para o blog */}
-          <div className="mt-15 bg-white text-gray-600">
-            <div className="mt-15 bg-white text-gray-600">
-              <h2 className="text-xl ml-4 font-bold dark:text-white">
+          <div className="mt-15 bg-white text-gray-600 dark:bg-boxdark-2">
+            <div className="mt-15 bg-white text-gray-600 dark:bg-boxdark-2">
+              <h2 className="text-xl ml-4 font-bold dark:text-white dark:bg-boxdark-2">
                 Para compradores, vendedores ou curiosos :)
               </h2>
               <div className="flex justify-start mt-5">
@@ -452,7 +452,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols justify-center mt-10">
+            <div className="grid grid-cols justify-center mt-10 dark:bg-boxdark-2">
               <Link
                 to="https://www.netimoveis.com/quem-somos#a-netimoveis"
                 target="_blank"
@@ -726,42 +726,43 @@ const Home = () => {
         </div>
         <div className="flex flex-col mt-40 mb-20 bg-white dark:text-white dark:bg-boxdark-2">
           <div className="flex space-x-4 p-4 ml-10 overflow-y-auto">
+            {/* Botão Tipos de Propriedades */}
             <button
-              className={`px-4 py-2 font-bold border-b-2 ${
+              className={`mt-5 px-4 py-2 font-bold border-b-2 ${
                 activeProperties === 'tipos'
                   ? 'text-orange-500 border-orange-500 whitespace-nowrap'
                   : 'text-gray-400 border-gray-200 whitespace-nowrap'
-              }`}
+              } sm:mt-15 sm:p-4 sm:ml-4`}
               onClick={() => setActiveProperties('tipos')}
             >
               Tipos de Propriedades
             </button>
+
             {/* Botão Populares para Venda */}
             <button
               className={`px-4 py-2 font-bold border-b-2 ${
                 activeProperties === 'venda'
                   ? 'text-orange-500 border-orange-500 whitespace-nowrap'
                   : 'text-gray-400 border-b-2 border-gray-200 whitespace-nowrap'
-              }`}
+              } sm:mt-15 sm:p-4 sm:ml-4`}
               onClick={() => setActiveProperties('venda')}
             >
               Populares para Venda
             </button>
+
             {/* Botão Populares para Locação */}
             <button
               className={`px-4 py-2 font-bold border-b-2 ${
                 activeProperties === 'locacao'
                   ? 'text-orange-500 border-orange-500 whitespace-nowrap'
                   : 'text-gray-400 border-b-2 border-gray-200 whitespace-nowrap'
-              }`}
+              } sm:mt-15 sm:p-4 sm:ml-4 `}
               onClick={() => setActiveProperties('locacao')}
             >
               Populares para Locação
             </button>
-            {activeProperties === 'tipos'}
-            {activeProperties === 'venda'}
-            {activeProperties === 'locacao'}
           </div>
+
           <div>
             <div className="grid grid-cols-2 sm:grid-cols-4 ml-10 sm:ml-40">
               <div className="mr-10 mb-10">
