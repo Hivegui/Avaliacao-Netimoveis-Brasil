@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
-} from 'react-icons/md' 
+} from 'react-icons/md'
 // Importando Componentes
 import CardSaoPaulo from '../Cards_Estados/CardSaoPaulo'
 import CardRioGrandedoSul from '../Cards_Estados/CardRioGrandedoSul'
@@ -62,7 +62,7 @@ export default function CarouselEstados() {
         {/* Botões de navegação - Ícone de voltar e de avançar */}
         <button
           type="button"
-          className="w-8 h-8 rounded-full shadow-md bg-white hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-200 hidden md:block"
+          className="w-8 h-8 rounded-full shadow-md bg-white hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-200 sm:flex"
           onClick={handlePrevClick}
         >
           <div className="flex justify-center items-center h-full w-full">
@@ -71,7 +71,7 @@ export default function CarouselEstados() {
         </button>
         <button
           type="button"
-          className="w-8 h-8 rounded-full shadow-md bg-white hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-200 hidden md:block"
+          className="w-8 h-8 rounded-full shadow-md bg-white hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-200 sm:flex"
           onClick={handleNextClick}
         >
           <div className="flex justify-center items-center h-full w-full">
