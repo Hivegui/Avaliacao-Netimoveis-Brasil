@@ -60,21 +60,19 @@ const Home = () => {
       <div className="max-w-screen-xl mx-auto px-4 md:px-4 lg:px-4 xl:px-4">
         <div className="justify-start w-full border-b border-gray-300 mt-5 space-x-4 xl:hidden">
           <button
-            className={`${
-              activeTab === 'alugar'
-                ? 'text-black-2 border-b-1 dark:text-orange-500 dark:font-bold border-b border-orange-500'
-                : 'text-gray-500 dark:text-white'
-            }`}
+            className={`${activeTab === 'alugar'
+              ? 'text-black-2 border-b-1 dark:text-orange-500 dark:font-bold border-b border-orange-500'
+              : 'text-gray-500 dark:text-white'
+              }`}
             onClick={() => setActiveTab('alugar')}
           >
             Alugar
           </button>
           <button
-            className={`${
-              activeTab === 'comprar'
-                ? 'text-black-2 border-b-1 dark:text-orange-500 dark:font-bold border-b border-orange-500'
-                : 'text-gray-500 dark:text-white'
-            }`}
+            className={`${activeTab === 'comprar'
+              ? 'text-black-2 border-b-1 dark:text-orange-500 dark:font-bold border-b border-orange-500'
+              : 'text-gray-500 dark:text-white'
+              }`}
             onClick={() => setActiveTab('comprar')}
           >
             Comprar
@@ -425,7 +423,7 @@ const Home = () => {
                     <p className="mt-5 ml-5 mr-5">
                       Aqui é desenvolvido esse motivo para negociar com a
                       Netimóveis. ipsum voluptatum quia voluptas sit aspernatur
-                      aut odit aut fugit
+                      aut odit aut elebanduque
                     </p>
                   </div>
                 </div>
@@ -542,20 +540,22 @@ const Home = () => {
             {/* Final do blog aqui */}
           </div>
           {/* Bloco das imagens com links */}
-            <div className="relative bg-center mt-20">
-              <img
-                src={ParteUp}
-                alt="Eficiência na Gestão de Chamados de Manutenção"
-                className="absolute w-full"
-              />
-            </div>
-            {/* Coloquei suas imagens com links aqui */}
+          <div className="relative bg-center mt-20 mb-20 bg-gray-100 h-100">
+            <img
+              src={ParteUp}
+              alt="Eficiência na Gestão de Chamados de Manutenção"
+              className="absolute w-full"
+            />
+          </div>
+          {/* Coloquei suas imagens com links aqui */}
         </div>
       </div>
 
       {/* Bloco da esquerda com imagem */}
-      <div className="flex w-full mt-30">
-        <div className="w-full">
+      <div className="flex w-full mt-60">
+        <div className="w-full hidden md:block">
+          {' '}
+          {/* Adicionando a classe hidden md:block para ocultar abaixo de 640px */}
           <img
             src={Apresentacao}
             alt="Anúncio Grátis"
@@ -563,9 +563,10 @@ const Home = () => {
             style={{ width: '900', height: '500px' }}
           />
         </div>
-        {/* Bloco da direita com o Aqui vai uma frase de efeito */}
-        <div className="bg-gray-100 p-8 w-full text-center dark:bg-white">
-          <h2 className="text-2xl font-bold mr-70 mb-4 dark:bg-white dark:text-black-2 hidden md:block">
+        <div className="bg-gray-100 p-8 w-full text-center dark:bg-white hidden md:block">
+          {' '}
+          {/* Adicionando a classe hidden md:block para ocultar abaixo de 640px */}
+          <h2 className="text-2xl font-bold mr-70 mb-4 dark:bg-white dark:text-black-2">
             Aqui vai uma frase de efeito
           </h2>
           <div className="mr-70 pl-5 space-y-2">
@@ -576,7 +577,7 @@ const Home = () => {
                 <p className="mt-5">
                   Aqui é desenvolvido esse motivo para negociar com a
                   Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
-                  odit aut fugit
+                  odit aut mantoricanto
                 </p>
               </div>
             </div>
@@ -587,7 +588,7 @@ const Home = () => {
                 <p className="mt-5 dark:text-black-2">
                   Aqui é desenvolvido esse motivo para negociar com a
                   Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
-                  odit aut fugit
+                  odit aut mantoricanto
                 </p>
               </div>
             </div>
@@ -598,16 +599,17 @@ const Home = () => {
                 <p className="mt-5">
                   Aqui é desenvolvido esse motivo para negociar com a
                   Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
-                  odit aut fugit
+                  odit aut mantoricanto
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       {/* Cabeçalho com Compradores, Vendedores ou Curiosos */}
-      <div className="flex flex-col h-screen bg-gray-100">
-        <div className="text-center text-gray-600 p-4 mt-20">
+      <div className="flex flex-col h-screen">
+        <div className="text-center text-gray-600 p-4 mt-20 hidden sm:block">
           <h1 className="text-2xl font-bold text-justify ml-60 dark:text-white">
             Para compradores, vendedores ou curiosos :)
           </h1>
@@ -622,7 +624,7 @@ const Home = () => {
             <FiArrowRight className="text-black-2 w-6 h-6 dark:text-orange-500" />
           </div>
         </div>
-        <div className="flex justify-center items-center p-0 w-full">
+        <div className="justify-center items-center p-0 w-full hidden md:flex">
           <div className="flex justify-center gap-40">
             <Link
               to="https://www.netimoveis.com/quem-somos#a-netimoveis"
@@ -711,47 +713,40 @@ const Home = () => {
           </div>
         </div>
         {/* Imagem Faça Parte Netimóveis */}
-        <div className="relative mt-20 flex text-center bg-gray-100">
+        <div className="relative mt-20 text-center bg-gray-100 hidden sm:block">
           <img
             src={FacaParte}
             alt="Faça Parte"
-            className="rounded-lg object-cover ml-75"
-            style={{
-              width: '70%',
-              height: '330px',
-            }}
+            className="rounded-lg object-cover ml-75 w-auto h-auto"
           />
         </div>
-        <div className="flex flex-col items-start justify-start mt-30">
-          <div className="flex space-x-4 p-4 ml-40 border-b-2 border-gray-300 w-full">
+        <div className="flex flex-col mt-40 mb-20 bg-white">
+          <div className="flex space-x-4 p-4 ml-10 border-b-2 border-gray-200">
             <button
-              className={`px-4 py-2 font-bold ${
-                activeTab2 === 'tipos'
-                  ? 'text-orange-500 border-b-2 border-orange-500'
-                  : 'text-gray-400'
-              }`}
+              className={`px-4 py-2 font-bold border-b-2 ${activeTab2 === 'tipos'
+                ? 'text-orange-500 border-orange-500 whitespace-nowrap'
+                : 'text-gray-400 border-b-2 border-gray-200 whitespace-nowrap'
+                }`}
               onClick={() => setActiveTab2('tipos')}
             >
               Tipos de Propriedades
             </button>
             {/* Botão Populares para Venda */}
             <button
-              className={`px-4 py-2 font-bold ${
-                activeTab2 === 'venda'
-                  ? 'text-orange-500 border-b-2 border-orange-500'
-                  : 'text-gray-400'
-              }`}
+              className={`px-4 py-2 font-bold border-b-2 ${activeTab2 === 'venda'
+              ? 'text-orange-500 border-orange-500 whitespace-nowrap'
+              : 'text-gray-400 border-b-2 border-gray-200 whitespace-nowrap'
+                }`}
               onClick={() => setActiveTab2('venda')}
             >
               Populares para Venda
             </button>
             {/* Botão Populares para Locação */}
             <button
-              className={`px-4 py-2 font-bold ${
-                activeTab2 === 'locacao'
-                  ? 'text-orange-500 border-b-2 border-orange-500'
-                  : 'text-gray-400'
-              }`}
+              className={`px-4 py-2 font-bold border-b-2 ${activeTab2 === 'locacao'
+              ? 'text-orange-500 border-orange-500 whitespace-nowrap'
+              : 'text-gray-400 border-b-2 border-gray-200 whitespace-nowrap'
+                }`}
               onClick={() => setActiveTab2('locacao')}
             >
               Populares para Locação
@@ -763,135 +758,138 @@ const Home = () => {
             {activeTab2 === 'locacao'}
           </div>
           <div>
-            <div className="grid grid-cols-3 ml-50 w-90%">
-              <div className="mr-20">
+            <div className="grid grid-cols-2 sm:grid-cols-4 ml-10 sm:ml-40">
+              <div className="mr-10 mb-10">
                 <Link to="/" className="font-bold text-gray-600 text-lg">
                   Alugar
                 </Link>
-                <ul className="mt-5">
-                  <li className="mb-10">
+                <ul className="mt-5 leading-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">Apartamentos</Link>
                   </li>
-                  <li className="mb-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">Casas</Link>
                   </li>
-                  <li className="mb-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">Terrenos</Link>
                   </li>
-                  <li className="mb-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">Lojas</Link>
                   </li>
                 </ul>
               </div>
-              <div className="mr-50">
+              <div className="mr-10 mb-10">
                 <Link to="/" className="font-bold text-gray-600 text-lg">
                   Comprar
                 </Link>
-                <ul className="mt-5">
-                  <li className="mb-10">
+                <ul className="mt-5 leading-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">Casas à Venda</Link>
                   </li>
-                  <li className="mb-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">
                       Imóv. em Condomínios
                     </Link>
                   </li>
-                  <li className="mb-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">Comprar terrenos</Link>
                   </li>
-                  <li className="mb-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">Lançamentos</Link>
                   </li>
                 </ul>
               </div>
-              <div className="mr-0">
+              <div className="mr-10 mb-5">
                 <Link to="/" className="font-bold text-gray-600 text-lg">
                   Comercial
                 </Link>
-                <ul className="mt-5">
-                  <li className="mb-10">
+                <ul className="mt-5 leading-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">
                       Imóveis com Escritório
                     </Link>
                   </li>
-                  <li className="mb-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">Prédio comercial</Link>
                   </li>
-                  <li className="mb-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">
                       Galpão de Armazenamento
                     </Link>
                   </li>
-                  <li className="mb-10">
+                  <li>
                     <Link to="/caminho-do-apartamento">Salão de Eventos</Link>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
+
           <div className="mt-20 py-10 w-full bg-gray-300">
-            <div className="grid grid-cols-4 ml-40">
-              {/* Coluna 1 */}
-              <div className="ml-10">
-                <Link to="/" className="font-bold text-blue-900 text-lg">
-                  A Netimóveis
-                </Link>
-                <ul>
-                  <li className="mt-2">Quem somos</li>
-                  <li className="mt-2">Como Funciona</li>
-                  <li className="mt-2">Seja um parceiro</li>
-                  <li className="mt-2">Quero me associar</li>
-                  <li className="mt-2">Acessoria de imprensa</li>
-                  <li className="mt-2">Soluções Corporativas</li>
-                  <li className="mt-2">Covid-19</li>
-                </ul>
-              </div>
-              {/* Coluna 2 */}
-              <div className="ml-5">
-                <Link to="/" className="font-bold text-blue-900 text-lg">
-                  Recursos
-                </Link>
-                <ul>
-                  <li className="mt-2">Comprar</li>
-                  <li className="mt-2">Alugar</li>
-                  <li className="mt-2">Lançamentos</li>
-                  <li className="mt-2">Anunciar Imóvel</li>
-                  <li className="mt-2">Simular Financiamento</li>
-                  <li className="mt-2">Imobiliárias</li>
-                  <li className="mt-2">Blog</li>
-                </ul>
-              </div>
-              {/* Coluna 3 */}
-              <div className="ml-0">
-                <Link to="/" className="font-bold text-blue-900 text-lg">
-                  Contato
-                </Link>
-                <ul>
-                  <li className="mt-2">Fale Conosco</li>
-                  <li className="mt-2">Perguntas Frequentes</li>
-                  <li className="mt-2">Suporte</li>
-                </ul>
-              </div>
-              {/* Coluna 4 */}
-              <div className="ml-10">
-                <Link to="/" className="font-bold text-blue-900 text-lg">
-                  Nossos Aplicativos
-                </Link>
-                <ul>
-                  <li className="mt-2">Loc Fácil Netimóveis</li>
-                  <li className="mt-2">Pro Imob Netimóveis</li>
-                </ul>
-                <div className="flex">
-                  <img
-                    src={ApplePlay}
-                    alt="App Store"
-                    className="w-35 h-11 mt-2 mr-2"
-                  />
-                  <img
-                    src={GooglePlay}
-                    alt="Google Play"
-                    className="w-35 h-14"
-                  />
+            <div className='ml-0 lg:ml-30'>
+              <div className="grid grid-cols-1 sm:ml-2 sm:grid-cols-4">
+                {/* Coluna 1 */}
+                <div className="ml-10 mb-10">
+                  <Link to="/" className="font-bold text-blue-900 text-lg">
+                    A Netimóveis
+                  </Link>
+                  <ul className="mt-5 leading-10">
+                    <li>Quem somos</li>
+                    <li>Como Funciona</li>
+                    <li>Seja um parceiro</li>
+                    <li>Quero me associar</li>
+                    <li>Acessoria de imprensa</li>
+                    <li>Soluções Corporativas</li>
+                    <li>Covid-19</li>
+                  </ul>
+                </div>
+                {/* Coluna 2 */}
+                <div className="ml-10 mb-10">
+                  <Link to="/" className="font-bold text-blue-900 text-lg">
+                    Recursos
+                  </Link>
+                  <ul className="mt-5 leading-10">
+                    <li>Comprar</li>
+                    <li>Alugar</li>
+                    <li>Lançamentos</li>
+                    <li>Anunciar Imóvel</li>
+                    <li>Simular Financiamento</li>
+                    <li>Imobiliárias</li>
+                    <li>Blog</li>
+                  </ul>
+                </div>
+                {/* Coluna 3 */}
+                <div className="ml-10 mb-10">
+                  <Link to="/" className="font-bold text-blue-900 text-lg">
+                    Contato
+                  </Link>
+                  <ul className="mt-5 leading-10">
+                    <li>Fale Conosco</li>
+                    <li>Perguntas Frequentes</li>
+                    <li>Suporte</li>
+                  </ul>
+                </div>
+                {/* Coluna 4 */}
+                <div className="ml-10 mb-10">
+                  <Link to="/" className="font-bold text-blue-900 text-lg">
+                    Nossos Aplicativos
+                  </Link>
+                  <ul className="mt-5 leading-10">
+                    <li>Loc Fácil Netimóveis</li>
+                    <li>Pro Imob Netimóveis</li>
+                  </ul>
+                  <div className="flex">
+                    <img
+                      src={ApplePlay}
+                      alt="App Store"
+                      className="w-35 h-11 mt-2 mr-2"
+                    />
+                    <img
+                      src={GooglePlay}
+                      alt="Google Play"
+                      className="w-35 h-14"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
