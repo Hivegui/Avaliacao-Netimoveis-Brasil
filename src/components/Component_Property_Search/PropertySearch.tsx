@@ -60,7 +60,7 @@ function PropertySearch() {
       <div className="mb-6 w-full relative">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 text-sm font-bold text-gray-700">
           <TbBed className="h-5 w-5 mb-7 ml-1 mt-3 text-gray-400" />
-          <span className="ml-2 mb-7 mt-3">N° de Quartos</span>
+          <span className="ml-2 mb-7 mt-3">N° de TESTE</span>
         </div>
         <select
           id="rooms"

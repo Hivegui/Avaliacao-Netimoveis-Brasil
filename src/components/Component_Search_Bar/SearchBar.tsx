@@ -1,72 +1,145 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { CiLocationOn } from 'react-icons/ci'
-import { TbBedFilled } from 'react-icons/tb'
-import { BiSearchAlt } from 'react-icons/bi'
+import React, { useState, useEffect, useRef } from 'react';
+import { LocationMarkerIcon } from '@heroicons/react/solid';
+import { BiSearchAlt } from 'react-icons/bi';
+import { TbBed } from 'react-icons/tb';
 
 function SearchBar() {
-  const addressInputRef = useRef<HTMLInputElement>(null)
-  const roomsInputRef = useRef<HTMLInputElement>(null)
-  const [rooms, setRooms] = useState<string>('')
+  const [showLabel, setShowLabel] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('Todos');
+  const [roomSearch, setRoomSearch] = useState('');
+  const addressInputRef = useRef(null);
+  const dropdownRef = useRef(null); // Referência para o dropdown
 
   useEffect(() => {
-    const script = document.createElement('script')
+    const script = document.createElement('script');
     script.src =
-      'https://maps.googleapis.com/maps/api/js?key=AIzaSyC-oyhsVGRK9uMQfDyabBOS56gMJlGj1Mc&libraries=places'
-    script.async = true
-    document.body.appendChild(script)
+      'https://maps.googleapis.com/maps/api/js?key=AIzaSyC-oyhsVGRK9uMQfDyabBOS56gMJlGj1Mc&libraries=places';
+    script.async = true;
+    document.body.appendChild(script);
 
     script.addEventListener('load', () => {
       const addressAutocomplete = new window.google.maps.places.Autocomplete(
-        addressInputRef.current!,
+        addressInputRef.current,
         {
           componentRestrictions: { country: 'BR' },
         }
-      )
+      );
       addressAutocomplete.addListener('place_changed', () => {
-        const nearPlace = addressAutocomplete.getPlace()
-      })
-    })
+        const nearPlace = addressAutocomplete.getPlace();
+      });
+    });
+
+    // Adiciona event listener para fechar o dropdown ao clicar fora dele
+    document.addEventListener('click', handleClickOutside);
 
     return () => {
-      document.body.removeChild(script)
+      document.body.removeChild(script);
+      // Remove event listener ao desmontar o componente
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
+    setRoomSearch(option !== 'Todos' ? `${option} Quartos` : 'Todos os Quartos');
+  };
+
+  // Função para verificar se o clique foi dentro ou fora do dropdown
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setShowLabel(true); // Fecha o dropdown se o clique foi fora dele
     }
-  }, [])
+  };
+
+  const options = ['Todos', '1+', '2+', '3+', '4+'];
 
   return (
-    <div className="flex w-full mb-30 bg-white rounded-full overflow-hidden mt-5 relative px-2 py-2">
-      {/* Campo de Localização */}
-      <div className="relative w-90 mr-2">
-        <div className="h-17 flex items-center">
-          <CiLocationOn className="absolute left-3 top-3 text-gray-500 h-10 w-5" />
-          <input
-            type="text"
-            name="address_input"
-            placeholder="Qual é a Localização?"
-            ref={addressInputRef}
-            className="w-90 h-full pl-10 pr-2 rounded-full text-black-2 placeholder:font-bold placeholder-black-2 border-gray-300 hover:bg-gray-100"
-          />
+    <div className="flex items-center justify-center py-5">
+      <div className="flex border-2 rounded-full bg-white">
+        <button className="flex items-center justify-center rounded-full px-4">
+          <LocationMarkerIcon className="h-5 w-5 text-gray-400 hover:text-gray-300" />
+        </button>
+        <input
+          className="px-4 py-3 w-65 rounded-full text-black-2 hover:bg-gray-200 transition duration-300 focus:outline-none"
+          type="text"
+          placeholder="Qual é a Localização?"
+          ref={addressInputRef}
+        />
+        <div className="relative flex items-center">
+          <div className="flex items-center justify-center rounded-full px-4">
+            <button
+              className="flex items-center justify-center"
+              onClick={() => setShowLabel(!showLabel)}
+            >
+              <TbBed className="h-5 w-5 text-gray-400 hover:text-gray-300" />
+            </button>
+          </div>
+          <div className="flex-grow">
+            <input
+              className="px-4 py-3 w-full text-black-2 hover:bg-gray-200 transition duration-300 focus:outline-none pl-8 rounded-full"
+              type="text"
+              placeholder={roomSearch || 'Quantos Quartos?'}
+              value={roomSearch}
+              readOnly
+              onClick={() => setShowLabel(!showLabel)}
+            />
+          </div>
+
+          {showLabel && (
+            <div
+              ref={dropdownRef} // Referência para o dropdown
+              className="absolute mt-80 py-5 px-10 bg-white shadow-lg rounded-xl text-gray-500 transition duration-300 focus:outline-none pl-4 ml-8"
+            >
+              <h1 className="mb-2 font-medium flex text-left">Número de Quartos</h1>
+              <div className="flex">
+                {options.map((option, index) => (
+                  <button
+                    key={index}
+                    className={`m-1 px-3 py-1 border rounded-full ${
+                      option === selectedOption
+                        ? 'bg-gray-100 border-purple-700 text-purple-700'
+                        : 'bg-white'
+                    }`}
+                    onClick={() => handleOptionClick(option)}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+              <div className="border-t border-gray-300 mt-5">
+                <div className="w-full max-w-xs mx-auto">
+                  <label
+                    htmlFor="property-type"
+                    className="flex mt-5 text-sm font-medium text-gray-600"
+                  >
+                    Tipo de Propriedade
+                  </label>
+                  <select
+                    id="property-type"
+                    name="property-type"
+                    className="mt-4 block outline-none rounded-lg w-full mb-3 pl-2 pr-10 py-2 text-base border appearance-none cursor-pointer sm:text-sm"
+                    defaultValue="all-types"
+                  >
+                    <option value="all-types">Todos os tipos</option>
+                    <option value="all-types">Casas</option>
+                    <option value="all-types">Apartamentos</option>
+                    <option value="all-types">Sítios</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      </div>
-      {/* Campo de Número de Quartos */}
-      <div className="flex w-full relative">
-        <div className="h-17 flex items-center relative">
-          <TbBedFilled className="absolute left-3 top-3 text-gray-500 h-10 w-5" />
-          <input
-            type="number"
-            name="rooms_input"
-            placeholder="N° de Quartos"
-            ref={roomsInputRef}
-            className="w-90 h-full pl-10 pr-2 rounded-full text-black-2 placeholder:font-bold placeholder-black-2 border-gray-300 hover:bg-gray-100"
-          />
-          <button className="absolute right-1 top-1 rounded-full bg-orange-500 hover:bg-orange-600 text-white px-4 py-4">
-            {' '}
-            {/* Adicione as classes necessárias para estilizar o botão como desejado */}
-            <BiSearchAlt className="inline-block w-6 h-6" />
-          </button>
-        </div>
+        <button
+          className="text-white bg-orange-500 border-l rounded-full px-6 py-4 flex items-center"
+          onClick={() => setShowLabel(false)}
+        >
+          <BiSearchAlt className="h-5 w-5 mr-2" />
+          <span>Buscar</span>
+        </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default SearchBar
+export default SearchBar;

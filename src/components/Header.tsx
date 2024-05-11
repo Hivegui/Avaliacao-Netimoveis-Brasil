@@ -28,7 +28,7 @@ function Header() {
             </nav>
           </div>
           <div className="items-center hidden xl:block">
-            <button className="border-2 border-text-purple-800 text-purple-800 rounded-full px-4 py-1 mr-2 transition-colors dark:text-blue-500">
+            <button className="border-2 border-text-purple-800 text-purple-800 rounded-full px-4 py-1 mr-2 transition-colors dark:text-white dark:hover:text-primary">
               Anunciar Imóvel
             </button>
             <button className="text-gray-800 rounded px-4 py-1 transition-colors dark:text-white dark:hover:text-orange-500">

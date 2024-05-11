@@ -131,7 +131,7 @@ const CardHoverImage = () => {
   )
 
   return (
-    <div className="relative bg-white dark:bg-black">
+    <div className="relative bg-white dark:bg-boxdark-2">
       {/* Background da imagem */}
       <header className="items-center justify-center relative">
         <img

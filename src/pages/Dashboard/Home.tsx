@@ -29,10 +29,10 @@ import Footer from '../../components/Footer'
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState('alugar')
-  const [activeTab2, setActiveTab2] = useState('tipos')
+  const [activeProperties, setActiveProperties] = useState('tipos')
 
   return (
-    <div className="relative bg-white dark:bg-black mt-16">
+    <div className="relative bg-white dark:bg-boxdark-2 mt-16">
       {/* Background do Banner principal */}
       <header className="items-center justify-center relative">
         <img
@@ -50,7 +50,7 @@ const Home = () => {
           </h1>
 
           {/* Componente da Barra de pesquisa */}
-          <div className="hidden xl:block">
+          <div className=" hidden xl:block">
             <SearchBar />
           </div>
         </div>
@@ -60,19 +60,21 @@ const Home = () => {
       <div className="max-w-screen-xl mx-auto px-4 md:px-4 lg:px-4 xl:px-4">
         <div className="justify-start w-full border-b border-gray-300 mt-5 space-x-4 xl:hidden">
           <button
-            className={`${activeTab === 'alugar'
-              ? 'text-black-2 border-b-1 dark:text-orange-500 dark:font-bold border-b border-orange-500'
-              : 'text-gray-500 dark:text-white'
-              }`}
+            className={`${
+              activeTab === 'alugar'
+                ? 'text-black-2 border-b-1 dark:text-orange-500 dark:font-bold border-b border-orange-500'
+                : 'text-gray-500 dark:text-white'
+            }`}
             onClick={() => setActiveTab('alugar')}
           >
             Alugar
           </button>
           <button
-            className={`${activeTab === 'comprar'
-              ? 'text-black-2 border-b-1 dark:text-orange-500 dark:font-bold border-b border-orange-500'
-              : 'text-gray-500 dark:text-white'
-              }`}
+            className={`${
+              activeTab === 'comprar'
+                ? 'text-black-2 border-b-1 dark:text-orange-500 dark:font-bold border-b border-orange-500'
+                : 'text-gray-500 dark:text-white'
+            }`}
             onClick={() => setActiveTab('comprar')}
           >
             Comprar
@@ -85,7 +87,7 @@ const Home = () => {
         <PropertySearch />
       </div>
 
-      <div className="px-5 bg-white dark:bg-black sm:px-60">
+      <div className="px-5 bg-white dark:bg-boxdark-2 sm:px-60">
         <a
           href="/"
           className="text-base py-2 font-bold text-black-2 dark:text-white"
@@ -123,17 +125,17 @@ const Home = () => {
         </div>
 
         {/* Componente de Carrossel */}
-        <div className="overflow-x-auto overflow-x-hidden sm-px-1 overflow-y-hidden mt-5 bg-white dark:bg-black mb-25 xl:overflow-x-hidden sm-px-1 block">
+        <div className="overflow-x-auto overflow-x-hidden sm-px-1 overflow-y-hidden mt-5 bg-white dark:bg-boxdark-2 mb-25 xl:overflow-x-hidden sm-px-1 block">
           <Carousel />
         </div>
       </div>
       {/* Título - Encontre um lugar que é a sua cara */}
-      <div className="bg-gray-100 dark:bg-black dark:text-white flex flex-col lg:flex-row lg:text-bold lg:ml-0 lg:text-left lg:mb-10">
-        <div className="p-4 lg:ml-60 mb-70 mt-20">
+      <div className="bg-gray-100 dark:bg-boxdark-2 dark:text-white flex flex-col lg:flex-row lg:text-bold lg:ml-0 lg:text-left lg:mb-10">
+      <div className="p-4 lg:ml-60 mt-20 lg:mb-70 md:mb-0">
           <h1 className="text-4xl lg:text-5xl text-gray-600 font-medium mb-4">
-            <span className="block">
+            <span className="block dark:text-white">
               Encontre um lugar <br />
-              que e a sua cara
+              que é a sua cara
             </span>
           </h1>
 
@@ -260,7 +262,7 @@ const Home = () => {
       </div>
 
       <div className="hidden xl:block">
-        <div className="flex justify-center items-center h-screen bg-white dark:bg-black">
+        <div className="flex justify-center items-center h-screen bg-white dark:bg-boxdark-2">
           {/* Banner com imagem de pesquisa */}
           <div className="flex flex-col-2 mt-0 items-start bg-white border border-gray-300 rounded-lg shadow">
             <img
@@ -373,7 +375,7 @@ const Home = () => {
 
           {/* Bloco da frase de efeito e motivos - TELA ABAIXO DE 640PX */}
           <div>
-            <h2 className="text-lg ml-5 mt-10 font-semibold bg-gray-100 dark:bg-white dark:text-black-2">
+            <h2 className="text-lg ml-5 mt-10 font-semibold bg-gray-100 dark:text-black-2 dark:bg-boxdark-2">
               Aqui vai uma frase de efeito
             </h2>
 
@@ -563,18 +565,18 @@ const Home = () => {
             style={{ width: '900', height: '500px' }}
           />
         </div>
-        <div className="bg-gray-100 p-8 w-full text-center dark:bg-white hidden md:block">
+        <div className="bg-gray-100 p-8 w-full text-center dark:bg-boxdark-2 hidden md:block">
           {' '}
           {/* Adicionando a classe hidden md:block para ocultar abaixo de 640px */}
-          <h2 className="text-2xl font-bold mr-70 mb-4 dark:bg-white dark:text-black-2">
+          <h2 className="text-2xl font-bold mr-70 mb-4 dark:text-white dark:bg-boxdark-2">
             Aqui vai uma frase de efeito
           </h2>
           <div className="mr-70 pl-5 space-y-2">
             <div className="flex items-start">
-              <FaCircle className="mt-9 mr-2 text-gray-400 text-4xl dark:text-black-2" />
+              <FaCircle className="mt-9 mr-2 text-gray-400 text-4xl dark:text-gray-900" />
               <div className="font-sm mt-10 dark:text-black-2">
-                <strong>Motivo para negociar com a Netimóveis:</strong>
-                <p className="mt-5">
+                <strong className='dark:text-white'>Motivo para negociar com a Netimóveis:</strong>
+                <p className="mt-5 dark:text-white">
                   Aqui é desenvolvido esse motivo para negociar com a
                   Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
                   odit aut mantoricanto
@@ -582,10 +584,10 @@ const Home = () => {
               </div>
             </div>
             <div className="flex items-start">
-              <FaCircle className="mt-4 mr-2 text-gray-400 text-4xl dark:text-black-2" />
-              <div className="font-sm mt-5 dark:text-black-2">
+              <FaCircle className="mt-4 mr-2 text-gray-400 text-4xl dark:text-gray-900" />
+              <div className="font-sm mt-5 dark:text-white">
                 <strong>Motivo para negociar com a Netimóveis:</strong>
-                <p className="mt-5 dark:text-black-2">
+                <p className="mt-5 dark:text-white">
                   Aqui é desenvolvido esse motivo para negociar com a
                   Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
                   odit aut mantoricanto
@@ -593,8 +595,8 @@ const Home = () => {
               </div>
             </div>
             <div className="flex items-start">
-              <FaCircle className="mt-4 mr-2 text-gray-400 text-4xl dark:text-black-2" />
-              <div className="font-sm mt-5 dark:text-black-2">
+              <FaCircle className="mt-4 mr-2 text-gray-400 text-4xl dark:text-gray-900" />
+              <div className="font-sm mt-5 dark:text-white">
                 <strong>Motivo para negociar com a Netimóveis:</strong>
                 <p className="mt-5">
                   Aqui é desenvolvido esse motivo para negociar com a
@@ -713,57 +715,58 @@ const Home = () => {
           </div>
         </div>
         {/* Imagem Faça Parte Netimóveis */}
-        <div className="relative mt-20 text-center bg-gray-100 hidden sm:block">
+        <div className="relative mt-20 text-center bg-gray-100 hidden sm:block dark:bg-boxdark-2">
           <img
             src={FacaParte}
             alt="Faça Parte"
             className="rounded-lg object-cover ml-75 w-auto h-auto"
           />
         </div>
-        <div className="flex flex-col mt-40 mb-20 bg-white">
-          <div className="flex space-x-4 p-4 ml-10 border-b-2 border-gray-200">
+        <div className="flex flex-col mt-40 mb-20 bg-white dark:text-white dark:bg-boxdark-2">
+          <div className="flex space-x-4 p-4 ml-10 overflow-y-auto">
             <button
-              className={`px-4 py-2 font-bold border-b-2 ${activeTab2 === 'tipos'
-                ? 'text-orange-500 border-orange-500 whitespace-nowrap'
-                : 'text-gray-400 border-b-2 border-gray-200 whitespace-nowrap'
-                }`}
-              onClick={() => setActiveTab2('tipos')}
+              className={`px-4 py-2 font-bold border-b-2 ${
+                activeProperties === 'tipos'
+                  ? 'text-orange-500 border-orange-500 whitespace-nowrap'
+                  : 'text-gray-400 border-gray-200 whitespace-nowrap'
+              }`}
+              onClick={() => setActiveProperties('tipos')}
             >
               Tipos de Propriedades
             </button>
             {/* Botão Populares para Venda */}
             <button
-              className={`px-4 py-2 font-bold border-b-2 ${activeTab2 === 'venda'
-              ? 'text-orange-500 border-orange-500 whitespace-nowrap'
-              : 'text-gray-400 border-b-2 border-gray-200 whitespace-nowrap'
-                }`}
-              onClick={() => setActiveTab2('venda')}
+              className={`px-4 py-2 font-bold border-b-2 ${
+                activeProperties === 'venda'
+                  ? 'text-orange-500 border-orange-500 whitespace-nowrap'
+                  : 'text-gray-400 border-b-2 border-gray-200 whitespace-nowrap'
+              }`}
+              onClick={() => setActiveProperties('venda')}
             >
               Populares para Venda
             </button>
             {/* Botão Populares para Locação */}
             <button
-              className={`px-4 py-2 font-bold border-b-2 ${activeTab2 === 'locacao'
-              ? 'text-orange-500 border-orange-500 whitespace-nowrap'
-              : 'text-gray-400 border-b-2 border-gray-200 whitespace-nowrap'
-                }`}
-              onClick={() => setActiveTab2('locacao')}
+              className={`px-4 py-2 font-bold border-b-2 ${
+                activeProperties === 'locacao'
+                  ? 'text-orange-500 border-orange-500 whitespace-nowrap'
+                  : 'text-gray-400 border-b-2 border-gray-200 whitespace-nowrap'
+              }`}
+              onClick={() => setActiveProperties('locacao')}
             >
               Populares para Locação
             </button>
-          </div>
-          <div className="p-4">
-            {activeTab2 === 'tipos'}
-            {activeTab2 === 'venda'}
-            {activeTab2 === 'locacao'}
+            {activeProperties === 'tipos'}
+            {activeProperties === 'venda'}
+            {activeProperties === 'locacao'}
           </div>
           <div>
             <div className="grid grid-cols-2 sm:grid-cols-4 ml-10 sm:ml-40">
               <div className="mr-10 mb-10">
-                <Link to="/" className="font-bold text-gray-600 text-lg">
+                <Link to="/" className="font-bold text-gray-600 text-lg dark:text-white">
                   Alugar
                 </Link>
-                <ul className="mt-5 leading-10">
+                <ul className="mt-5 leading-10 dark:text-gray-300">
                   <li>
                     <Link to="/caminho-do-apartamento">Apartamentos</Link>
                   </li>
@@ -779,10 +782,10 @@ const Home = () => {
                 </ul>
               </div>
               <div className="mr-10 mb-10">
-                <Link to="/" className="font-bold text-gray-600 text-lg">
+                <Link to="/" className="font-bold text-gray-600 text-lg dark:text-white">
                   Comprar
                 </Link>
-                <ul className="mt-5 leading-10">
+                <ul className="mt-5 leading-10 dark:text-gray-300">
                   <li>
                     <Link to="/caminho-do-apartamento">Casas à Venda</Link>
                   </li>
@@ -800,10 +803,10 @@ const Home = () => {
                 </ul>
               </div>
               <div className="mr-10 mb-5">
-                <Link to="/" className="font-bold text-gray-600 text-lg">
+                <Link to="/" className="font-bold text-gray-600 text-lg dark:text-white">
                   Comercial
                 </Link>
-                <ul className="mt-5 leading-10">
+                <ul className="mt-5 leading-10 dark:text-gray-300">
                   <li>
                     <Link to="/caminho-do-apartamento">
                       Imóveis com Escritório
@@ -825,71 +828,69 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="mt-20 py-10 w-full bg-gray-300">
-            <div className='ml-0 lg:ml-30'>
-              <div className="grid grid-cols-1 sm:ml-2 sm:grid-cols-4">
-                {/* Coluna 1 */}
-                <div className="ml-10 mb-10">
-                  <Link to="/" className="font-bold text-blue-900 text-lg">
-                    A Netimóveis
-                  </Link>
-                  <ul className="mt-5 leading-10">
-                    <li>Quem somos</li>
-                    <li>Como Funciona</li>
-                    <li>Seja um parceiro</li>
-                    <li>Quero me associar</li>
-                    <li>Acessoria de imprensa</li>
-                    <li>Soluções Corporativas</li>
-                    <li>Covid-19</li>
-                  </ul>
-                </div>
-                {/* Coluna 2 */}
-                <div className="ml-10 mb-10">
-                  <Link to="/" className="font-bold text-blue-900 text-lg">
-                    Recursos
-                  </Link>
-                  <ul className="mt-5 leading-10">
-                    <li>Comprar</li>
-                    <li>Alugar</li>
-                    <li>Lançamentos</li>
-                    <li>Anunciar Imóvel</li>
-                    <li>Simular Financiamento</li>
-                    <li>Imobiliárias</li>
-                    <li>Blog</li>
-                  </ul>
-                </div>
-                {/* Coluna 3 */}
-                <div className="ml-10 mb-10">
-                  <Link to="/" className="font-bold text-blue-900 text-lg">
-                    Contato
-                  </Link>
-                  <ul className="mt-5 leading-10">
-                    <li>Fale Conosco</li>
-                    <li>Perguntas Frequentes</li>
-                    <li>Suporte</li>
-                  </ul>
-                </div>
-                {/* Coluna 4 */}
-                <div className="ml-10 mb-10">
-                  <Link to="/" className="font-bold text-blue-900 text-lg">
-                    Nossos Aplicativos
-                  </Link>
-                  <ul className="mt-5 leading-10">
-                    <li>Loc Fácil Netimóveis</li>
-                    <li>Pro Imob Netimóveis</li>
-                  </ul>
-                  <div className="flex">
-                    <img
-                      src={ApplePlay}
-                      alt="App Store"
-                      className="w-35 h-11 mt-2 mr-2"
-                    />
-                    <img
-                      src={GooglePlay}
-                      alt="Google Play"
-                      className="w-35 h-14"
-                    />
-                  </div>
+          <div className="ml-0 lg:ml-30">
+            <div className="grid grid-cols-1 sm:ml-2 sm:grid-cols-4">
+              {/* Coluna 1 */}
+              <div className="ml-10 mb-10">
+                <Link to="/" className="font-bold text-blue-900 dark:text-blue-600 text-lg">
+                  A Netimóveis
+                </Link>
+                <ul className="mt-5 leading-10 dark:text-gray-300">
+                  <li>Quem somos</li>
+                  <li>Como Funciona</li>
+                  <li>Seja um parceiro</li>
+                  <li>Quero me associar</li>
+                  <li>Acessoria de imprensa</li>
+                  <li>Soluções Corporativas</li>
+                  <li>Covid-19</li>
+                </ul>
+              </div>
+              {/* Coluna 2 */}
+              <div className="ml-10 mb-10 dark:text-gray-300">
+                <Link to="/" className="font-bold text-blue-600 text-lg">
+                  Recursos
+                </Link>
+                <ul className="mt-5 leading-10">
+                  <li>Comprar</li>
+                  <li>Alugar</li>
+                  <li>Lançamentos</li>
+                  <li>Anunciar Imóvel</li>
+                  <li>Simular Financiamento</li>
+                  <li>Imobiliárias</li>
+                  <li>Blog</li>
+                </ul>
+              </div>
+              {/* Coluna 3 */}
+              <div className="ml-10 mb-10">
+                <Link to="/" className="font-bold text-blue-600 text-lg">
+                  Contato
+                </Link>
+                <ul className="mt-5 leading-10 dark:text-gray-300">
+                  <li>Fale Conosco</li>
+                  <li>Perguntas Frequentes</li>
+                  <li>Suporte</li>
+                </ul>
+              </div>
+              {/* Coluna 4 */}
+              <div className="ml-10 mb-10">
+                <Link to="/" className="font-bold text-blue-600 text-lg">
+                  Nossos Aplicativos
+                </Link>
+                <ul className="mt-5 leading-10 dark:text-gray-300">
+                  <li>Loc Fácil Netimóveis</li>
+                  <li>Pro Imob Netimóveis</li>
+                </ul>
+                <div className="flex">
+                  <img
+                    src={ApplePlay}
+                    alt="App Store"
+                    className="w-35 h-11 mt-2 mr-2"
+                  />
+                  <img
+                    src={GooglePlay}
+                    alt="Google Play"
+                    className="w-35 h-14"
+                  />
                 </div>
               </div>
             </div>

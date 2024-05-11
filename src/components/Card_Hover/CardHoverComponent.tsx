@@ -29,7 +29,7 @@ const CardHover = () => {
   // Definições de conteúdo para cada botão
   const alugarContent = (
     <>
-      <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
+      <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-2 text-justify">
         Alugar sem complicação
       </h2>
 
@@ -37,19 +37,19 @@ const CardHover = () => {
         Alugue imóveis qualificados e sem repetição. Sed ut <br />
         perspiciatis unde omnis iste natus error sit.
       </p>
-      <button className="flex font-semibold text-purple-700 border border-purple-700 px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white">
+      <button className="flex font-semibold text-purple-700 border border-purple-700 px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white dark:text-white dark:bg-purple-700 dark:hover:bg-purple-600">
         Ver imóveis para Alugar
       </button>
       <div className="flex flex-col items-start mt-6">
         <a
           href="#"
-          className="text-black-2 underline hover:underline mb-2 hover:text-purple-700"
+          className="text-black-2 border-b mb-2 hover:text-purple-700 dark:text-white dark:hover:text-purple-600 xl:mr-20"
         >
           Veja como Alugar sem Fiador
         </a>
         <a
           href="#"
-          className="text-black-2 underline hover:underline hover:text-purple-700 xl:mr-20"
+          className="text-black-2 border-b mb-2 hover:text-purple-700 dark:text-white dark:hover:text-purple-600 xl:mr-20"
         >
           Saiba como funciona o Aluguel na Netimóveis
         </a>
@@ -59,7 +59,7 @@ const CardHover = () => {
 
   const comprarContent = (
     <>
-      <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-4 text-justify">
+      <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white mb-2 text-justify">
         Compre com Segurança
       </h2>
       <p className="text-gray-600 text-sm dark:text-white mb-6 text-justify">
@@ -67,19 +67,19 @@ const CardHover = () => {
         <br />
         perspiciatis unde omnis iste natus error sit.
       </p>
-      <button className="flex font-semibold text-purple-700 border border-purple-700 px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white">
+      <button className="flex font-semibold text-purple-700 border border-purple-700 px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white dark:text-white dark:bg-purple-700 dark:hover:bg-purple-600">
         Ver imóveis para Comprar
       </button>
       <div className="flex flex-col items-start mt-6">
         <a
           href="#"
-          className="text-black-2 underline hover:underline mb-2 hover:text-purple-700"
+          className="text-black-2 border-b mb-2 hover:text-purple-700 dark:text-white dark:hover:text-purple-600 xl:mr-20"
         >
           Simule seu Financiamento
         </a>
         <a
           href="#"
-          className="text-black-2 underline hover:underline hover:text-purple-700"
+          className="text-black-2 border-b mb-2 hover:text-purple-700 dark:text-white dark:hover:text-purple-600 xl:mr-20"
         >
           Saiba como funciona a Compra na Netimóveis
         </a>
@@ -95,20 +95,20 @@ const CardHover = () => {
       <p className="text-gray-600 text-sm dark:text-white mb-6 text-justify">
         Anuncie gratuitamente na maior rede de imobiliárias do Brasil.
       </p>
-      <button className="flex font-semibold text-purple-700 border border-purple-700 px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white">
+      <button className="flex font-semibold text-purple-700 border border-purple-700 px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white dark:text-white dark:bg-purple-700 dark:hover:bg-purple-600">
         Anunciar Imóvel
       </button>
       <div className="flex items-center mt-6">
-        <a href="#" className="text-black-2 font-bold flex items-center">
+        <a href="#" className="text-black-2 font-bold flex items-center dark:text-white">
           Descubra Quanto Cobrar
-          <IoArrowForwardOutline className="ml-1 text-black-2 text-xl" />
+          <IoArrowForwardOutline className="ml-1 mt-1 text-black-2 text-xl dark:text-purple-500" />
         </a>
       </div>
     </>
   )
 
   return (
-    <div className="relative bg-gray-100 dark:bg-black">
+    <div className="relative bg-gray-100 dark:bg-boxdark-2">
       <div className="inset-0 justify-start items-center ml-60 xl:mr-40 hidden xl:block">
         <div className="bg-white dark:bg-boxdark-2 p-6 ml-6 rounded-xl flex-col justify-center items-center">
           <div className="p-8 justify-center items-center">
@@ -126,7 +126,7 @@ const CardHover = () => {
                   onClick={() => setContent('alugar')}
                 >
                   <div className="flex flex-col items-center">
-                    <LiaKeySolid className="h-6 w-6 mb-1 text-gray-600 transform rotate-[90deg]" />
+                    <LiaKeySolid className="h-6 w-6 mb-1 text-gray-600 transform rotate-[90deg] dark:text-white dark:hover:text-yellow-600" />
                     <span>
                       Alugar <br /> Imóvel
                     </span>
@@ -141,7 +141,7 @@ const CardHover = () => {
                   onClick={() => setContent('comprar')}
                 >
                   <div className="flex flex-col items-center">
-                    <PiCurrencyDollarLight className="h-6 w-6 mb-1 text-gray-600" />
+                    <PiCurrencyDollarLight className="h-6 w-6 mb-1 text-gray-600 dark:text-white" />
                     <span>
                       Comprar <br /> Imóvel
                     </span>
@@ -156,7 +156,7 @@ const CardHover = () => {
                   onClick={() => setContent('anunciar')}
                 >
                   <div className="flex flex-col items-center">
-                    <TbHomeMove className="h-6 w-6 mb-1 text-gray-600" />
+                    <TbHomeMove className="h-6 w-6 mb-1 text-gray-600 dark:text-white" />
                     <span>Anunciar Imóvel</span>
                   </div>
                 </button>
