@@ -295,6 +295,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       {/* Não aparece acima de 640px */}
       <div className="grid-cols-1 px-75 hidden sm:hidden md:block">
         <h1 className="text-2xl text-left text-black-2 font-extrabold ml-5 dark:text-white">
@@ -309,8 +310,10 @@ const Home = () => {
           <img
             src={BannerPortugal}
             alt="Banner Portugal"
-            className="w-full h-auto rounded-lg shadow-left-to-right"
+            className="w-full h-auto rounded-lg shadow-left-to-right sm:rounded-lg"
           />
+          <div className="absolute top-0 left-0 h-full w-10/12 rounded-lg bg-gradient-to-r from-black to-transparent opacity-70 sm:rounded-lg"></div>
+
           <div className="absolute top-0 left-0 p-4 inset-0">
             <h2 className="text-white text-3xl ml-10 mt-8 font-bold">
               Encontre a oportunidade <br /> Perfeita em Portugal
@@ -339,23 +342,28 @@ const Home = () => {
           <CarouselEstados />
         </div>
 
-        <div className="relative md:hidden xl:hidden bg-gray-100">
-          <img
-            src={BannerPortugalLower}
-            alt="Banner Portugal"
-            className="object-cover px-4 shadow-left-to-right md:w-1/2 xl:w-1/3 mx-auto"
-          />
-          <div className="absolute top-0 left-0 p-4 inset-0">
-            <h2 className="text-white text-lg text-left ml-2 mt-4 font-bold">
-              Encontre a oportunidade <br /> Perfeita em Portugal
-            </h2>
-          </div>
-          <div className="absolute top-0 right-35 m-4">
-            <button className="bg-white font-semibold text-base text-orange-500 mt-30 p-2 rounded-lg hover:bg-gray-100 duration-300 ease-in-out">
-              Ver imóveis em Portugal
-            </button>
+        <div className="md:hidden xl:hidden bg-gray-100">
+          {/* Bloco do Banner Portugal */}
+          <div className="relative">
+            <img
+              src={BannerPortugalLower}
+              alt="Banner Portugal"
+              className="object-cover px-4 shadow-left-to-right md:w-1/2 xl:w-1/3 mx-auto"
+            />
+
+            <div className="absolute top-0 left-0 p-4 inset-0">
+              <h2 className="text-white text-lg text-left ml-2 mt-4 font-bold">
+                Encontre a oportunidade <br /> Perfeita em Portugal
+              </h2>
+            </div>
+            <div className="absolute top-0 right-35 m-4">
+              <button className="bg-white font-semibold text-base text-orange-500 mt-30 p-2 rounded-lg hover:bg-gray-100 duration-300 ease-in-out">
+                Ver imóveis em Portugal
+              </button>
+            </div>
           </div>
 
+          {/* Bloco do Anúncio Grátis */}
           <div className="w-full mt-20">
             <img
               src={Apresentacao}
@@ -365,56 +373,69 @@ const Home = () => {
             />
           </div>
 
-          <h2 className="text-lg ml-5 mt-10 font-semibold bg-gray-100 dark:bg-white dark:text-black-2">
-            Aqui vai uma frase de efeito
-          </h2>
+          {/* Bloco da frase de efeito e motivos - TELA ABAIXO DE 640PX */}
+          <div>
+            <h2 className="text-lg ml-5 mt-10 font-semibold bg-gray-100 dark:bg-white dark:text-black-2">
+              Aqui vai uma frase de efeito
+            </h2>
 
-          <div className="flex flex-col items-start bg-gray-100">
-            <div className="absolute mt-10 dark:text-black-2">
-              <FaCircle className="text-gray-400 ml-5 text-2xl dark:text-gray-400" />
-            </div>
-            <div className="flex flex-col">
-              <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5">
-                Motivo hara negociar com a Netimóveis:
-              </h3>
-              <p className="mt-5 ml-5">
-                Aqui é desenvolvido esse motivo para negociar com a Netimóveis.
-                ipsum voluptatum quia voluptas sit aspernatur aut odit aut fugit
-              </p>
-            </div>
+            <div className="flex flex-col items-start bg-gray-100">
+              {/* Aqui vão os motivos */}
+              <div className="flex flex-col items-start bg-gray-100">
+                <div className="flex items-start">
+                  <div className="absolute mt-10 dark:text-black-2">
+                    <FaCircle className="text-gray-400 ml-5 text-2xl dark:text-gray-400" />
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5">
+                      Motivo para negociar com a Netimóveis:
+                    </h3>
+                    <p className="mt-5 ml-5 mr-5">
+                      Aqui é desenvolvido esse motivo para negociar com a
+                      Netimóveis. ipsum voluptatum quia voluptas sit aspernatur
+                      aut odit aut fugit
+                    </p>
+                  </div>
+                </div>
 
-            <div className="flex items-start">
-              <div className="absolute mt-10 dark:text-black-2">
-                <FaCircle className="text-gray-400 ml-5 text-2xl dark:text-gray-400" />
+                <div className="flex items-start">
+                  <div className="absolute mt-10 dark:text-black-2">
+                    <FaCircle className="text-gray-400 ml-5 text-2xl dark:text-gray-400" />
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5">
+                      Motivo para negociar com a Netimóveis:
+                    </h3>
+                    <p className="mt-5 ml-5 mr-5">
+                      Aqui é desenvolvido esse motivo para negociar com a
+                      Netimóveis. ipsum voluptatum quia voluptas sit aspernatur
+                      aut odit aut fugit
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="absolute mt-10 dark:text-black-2">
+                    <FaCircle className="text-gray-400 ml-5 text-2xl dark:text-gray-400" />
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5">
+                      Motivo para negociar com a Netimóveis:
+                    </h3>
+                    <p className="mt-5 ml-5 mr-5">
+                      Aqui é desenvolvido esse motivo para negociar com a
+                      Netimóveis. ipsum voluptatum quia voluptas sit aspernatur
+                      aut odit aut fugit
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5">
-                  Motivo hara negociar com a Netimóveis:
-                </h3>
-                <p className="mt-5 ml-5">
-                  Aqui é desenvolvido esse motivo para negociar com a
-                  Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
-                  odit aut fugit
-                </p>
-              </div>
+              {/* Final dos motivos */}
             </div>
           </div>
 
-          <div className="flex items-start">
-            <div className="absolute mt-10 dark:text-black-2">
-              <FaCircle className="text-gray-400 ml-5 text-2xl dark:text-gray-400" />
-            </div>
-            <div className="flex flex-col">
-              <h3 className="text-base font-semibold text-gray-600 mt-20 ml-5">
-                Motivo hara negociar com a Netimóveis:
-              </h3>
-              <p className="mt-5 ml-5">
-                Aqui é desenvolvido esse motivo para negociar com a Netimóveis.
-                ipsum voluptatum quia voluptas sit aspernatur aut odit aut fugit
-              </p>
-            </div>
-          </div>
-          <div className="bg-white">
+          {/* Bloco de link para o blog */}
+          <div className="mt-15 bg-white text-gray-600">
             <div className="mt-15 bg-white text-gray-600">
               <h2 className="text-xl ml-4 font-bold dark:text-white">
                 Para compradores, vendedores ou curiosos :)
@@ -443,17 +464,19 @@ const Home = () => {
                   className="rounded-xl object-cover"
                   style={{ width: '350px', height: '230px' }}
                 />
-                <div className="flex text-left mt-5">
-                  <div className="flex ">
-                    <GoClock className="mr-2 dark:text-white" />
-                    <p className="text-sm dark:text-white">2 Min de Leitura</p>
+                <div className="flex text-left mt-4">
+                  <div className="flex">
+                    <GoClock className="mr-2 text-left dark:text-white" />
+                    <p className="text-sm mr-2 dark:text-white">
+                      2 Min de Leitura
+                    </p>
                   </div>
-                  <div className="ml-2">
+                  <div className="ml-4">
                     {' '}
                     <p className="text-orange-500 text-sm">Mundo Netimóveis</p>
                   </div>
                 </div>
-                <h1 className="mt-2 text-left text-black-2 font-extrabold text-base dark:text-white">
+                <h1 className="mt-2 mb-10 text-left text-black-2 font-bold text-base dark:text-white">
                   ENCONTRO NETIMÓVEIS BRASIL - N<br /> CONNECTIONS 2021 A FORÇA
                   DOS <br /> NEGÓCIOS EM REDE
                 </h1>
@@ -466,9 +489,10 @@ const Home = () => {
                 <img
                   src={Financas}
                   alt="Organização Financeira nas Imobiliárias"
-                  className="rounded-xl object-cover mt-10"
+                  className="rounded-xl object-cover"
                   style={{ width: '350px', height: '230px' }}
                 />
+                {/* Segundo Blog */}
                 <div className="flex items-center mt-4">
                   <div className="flex items-center">
                     <GoClock className="mr-2 text-left dark:text-white" />
@@ -481,7 +505,7 @@ const Home = () => {
                     <p className="text-orange-500 text-sm">Mundo Netimóveis</p>
                   </div>
                 </div>
-                <h1 className="mt-2 text-left text-black-2 font-extrabold text-base dark:text-white">
+                <h1 className="mt-2 text-left text-black-2 font-bold text-base dark:text-white">
                   ORGANIZAÇÃO FINANCEIRA NAS
                   <br /> IMOBILIÁRIAS
                 </h1>
@@ -494,7 +518,7 @@ const Home = () => {
                 <img
                   src={Conserto}
                   alt="Eficiência na Gestão de Chamados de Manutenção"
-                  className="rounded-xl object-cover mt-10"
+                  className="rounded-xl object-cover"
                   style={{ width: '350px', height: '230px' }}
                 />
                 <div className="flex items-center mt-4">
@@ -509,334 +533,80 @@ const Home = () => {
                     <p className="text-orange-500 text-sm">Mundo Netimóveis</p>
                   </div>
                 </div>
-                <h1 className="mt-2 text-left text-black-2 font-extrabold text-base dark:text-white">
+                <h1 className="mt-2 text-left text-black-2 font-bold text-base dark:text-white">
                   EFICIÊNCIA NA GESTÃO DE
                   <br /> CHAMADOS DE MANUTENÇÃO
                 </h1>
               </Link>
             </div>
+            {/* Final do blog aqui */}
           </div>
-
-          <div className="relative bg-center mt-20">
-            <img
-              src={ParteUp}
-              alt="Eficiência na Gestão de Chamados de Manutenção"
-              className="absolute w-full"
-            />
-          </div>
-          
-          {/* Primeira parte FOOTER */}
-          <div className="flex space-x-4 p-4 ml-40 border-b-2 border-gray-300 w-full">
-            <button
-              className={`px-4 py-2 font-bold ${
-                activeTab2 === 'tipos'
-                  ? 'text-orange-500 border-b-2 border-orange-500'
-                  : 'text-gray-400'
-              }`}
-              onClick={() => setActiveTab2('tipos')}
-            >
-              Tipos de Propriedades
-            </button>
-            {/* Botão Populares para Venda */}
-            <button
-              className={`px-4 py-2 font-bold ${
-                activeTab2 === 'venda'
-                  ? 'text-orange-500 border-b-2 border-orange-500'
-                  : 'text-gray-400'
-              }`}
-              onClick={() => setActiveTab2('venda')}
-            >
-              Populares para Venda
-            </button>
-            {/* Botão Populares para Locação */}
-            <button
-              className={`px-4 py-2 font-bold ${
-                activeTab2 === 'locacao'
-                  ? 'text-orange-500 border-b-2 border-orange-500'
-                  : 'text-gray-400'
-              }`}
-              onClick={() => setActiveTab2('locacao')}
-            >
-              Populares para Locação
-            </button>
-          </div>
-          
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            
-            {/* FIM primeira parte FOOTER */}
-            {/* SEGUNDA parte FOOTER */}
-            <div>
-              <div className="grid grid-cols-2">
-                <div className="mr-20">
-                  <Link to="/" className="font-bold text-gray-600 text-lg">
-                    Alugar
-                  </Link>
-                  <ul className="mt-5">
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">Apartamentos</Link>
-                    </li>
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">Casas</Link>
-                    </li>
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">Terrenos</Link>
-                    </li>
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">Lojas</Link>
-                    </li>
-                  </ul>
-                </div>
-                <div className="mr-50">
-                  <Link to="/" className="font-bold text-gray-600 text-lg">
-                    Comprar
-                  </Link>
-                  <ul className="mt-5">
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">Casas à Venda</Link>
-                    </li>
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">
-                        Imóv. em Condomínios
-                      </Link>
-                    </li>
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">Comprar terrenos</Link>
-                    </li>
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">Lançamentos</Link>
-                    </li>
-                  </ul>
-                </div>
-                <div className="mr-0">
-                  <Link to="/" className="font-bold text-gray-600 text-lg">
-                    Comercial
-                  </Link>
-                  <ul className="mt-5">
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">
-                        Imóveis com Escritório
-                      </Link>
-                    </li>
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">Prédio comercial</Link>
-                    </li>
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">
-                        Galpão de Armazenamento
-                      </Link>
-                    </li>
-                    <li className="mb-10">
-                      <Link to="/caminho-do-apartamento">Salão de Eventos</Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          {/* Bloco das imagens com links */}
+            <div className="relative bg-center mt-20">
+              <img
+                src={ParteUp}
+                alt="Eficiência na Gestão de Chamados de Manutenção"
+                className="absolute w-full"
+              />
             </div>
-            {/* FIM DA SEGUNDA parte FOOTER */}
-            {/* TERCEIRA parte FOOTER */}
-            <div className="mt-20 py-10 w-full bg-gray-300">
-              <div className="grid grid-cols-4 ml-40">
-                {/* Coluna 1 */}
-                <div className="ml-10">
-                  <Link to="/" className="font-bold text-blue-900 text-lg">
-                    A Netimóveis
-                  </Link>
-                  <ul>
-                    <li className="mt-2">Quem somos</li>
-                    <li className="mt-2">Como Funciona</li>
-                    <li className="mt-2">Seja um parceiro</li>
-                    <li className="mt-2">Quero me associar</li>
-                    <li className="mt-2">Acessoria de imprensa</li>
-                    <li className="mt-2">Soluções Corporativas</li>
-                    <li className="mt-2">Covid-19</li>
-                  </ul>
-                </div>
-                {/* Coluna 2 */}
-                <div className="ml-5">
-                  <Link to="/" className="font-bold text-blue-900 text-lg">
-                    Recursos
-                  </Link>
-                  <ul>
-                    <li className="mt-2">Comprar</li>
-                    <li className="mt-2">Alugar</li>
-                    <li className="mt-2">Lançamentos</li>
-                    <li className="mt-2">Anunciar Imóvel</li>
-                    <li className="mt-2">Simular Financiamento</li>
-                    <li className="mt-2">Imobiliárias</li>
-                    <li className="mt-2">Blog</li>
-                  </ul>
-                </div>
-                {/* Coluna 3 */}
-                <div className="ml-0">
-                  <Link to="/" className="font-bold text-blue-900 text-lg">
-                    Contato
-                  </Link>
-                  <ul>
-                    <li className="mt-2">Fale Conosco</li>
-                    <li className="mt-2">Perguntas Frequentes</li>
-                    <li className="mt-2">Suporte</li>
-                  </ul>
-                </div>
-                {/* Coluna 4 */}
-                <div className="ml-10">
-                  <Link to="/" className="font-bold text-blue-900 text-lg">
-                    Nossos Aplicativos
-                  </Link>
-                  <ul>
-                    <li className="mt-2">Loc Fácil Netimóveis</li>
-                    <li className="mt-2">Pro Imob Netimóveis</li>
-                  </ul>
-                  <div className="flex">
-                    <img
-                      src={ApplePlay}
-                      alt="App Store"
-                      className="w-35 h-11 mt-2 mr-2"
-                    />
-                    <img
-                      src={GooglePlay}
-                      alt="Google Play"
-                      className="w-35 h-14"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* FIM DA TERCEIRA parte FOOTER */}
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          {/* ESTOU AQUIiiii caralho */}
+            {/* Coloquei suas imagens com links aqui */}
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       {/* Bloco da esquerda com imagem */}
-      <div className="w-full mt-30 hidden sm:block">
-  <div className="w-full">
-    <img
-      src={Apresentacao}
-      alt="Anúncio Grátis"
-      className="w-full rounded-l-lg object-cover"
-      style={{ width: '900', height: '500px' }}
-    />
-  </div>
-  {/* Bloco da direita com o Aqui vai uma frase de efeito */}
-  <div className="bg-gray-100 p-8 w-full text-center dark:bg-white hidden sm:block">
-    <h2 className="text-2xl font-bold mr-70 mb-4 dark:bg-white dark:text-black-2">
-      Aqui vai uma frase de efeito
-    </h2>
-    <div className="mr-70 pl-5 space-y-2">
-      <div className="flex items-start">
-        <FaCircle className="mt-9 mr-2 text-gray-400 text-4xl dark:text-black-2" />
-        <div className="font-sm mt-10 dark:text-black-2">
-          <strong>Motivo para negociar com a Netimóveis:</strong>
-          <p className="mt-5">
-            Aqui é desenvolvido esse motivo para negociar com a
-            Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
-            odit aut fugit
-          </p>
+      <div className="flex w-full mt-30">
+        <div className="w-full">
+          <img
+            src={Apresentacao}
+            alt="Anúncio Grátis"
+            className="w-full rounded-l-lg object-cover"
+            style={{ width: '900', height: '500px' }}
+          />
+        </div>
+        {/* Bloco da direita com o Aqui vai uma frase de efeito */}
+        <div className="bg-gray-100 p-8 w-full text-center dark:bg-white">
+          <h2 className="text-2xl font-bold mr-70 mb-4 dark:bg-white dark:text-black-2 hidden md:block">
+            Aqui vai uma frase de efeito
+          </h2>
+          <div className="mr-70 pl-5 space-y-2">
+            <div className="flex items-start">
+              <FaCircle className="mt-9 mr-2 text-gray-400 text-4xl dark:text-black-2" />
+              <div className="font-sm mt-10 dark:text-black-2">
+                <strong>Motivo para negociar com a Netimóveis:</strong>
+                <p className="mt-5">
+                  Aqui é desenvolvido esse motivo para negociar com a
+                  Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
+                  odit aut fugit
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <FaCircle className="mt-4 mr-2 text-gray-400 text-4xl dark:text-black-2" />
+              <div className="font-sm mt-5 dark:text-black-2">
+                <strong>Motivo para negociar com a Netimóveis:</strong>
+                <p className="mt-5 dark:text-black-2">
+                  Aqui é desenvolvido esse motivo para negociar com a
+                  Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
+                  odit aut fugit
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <FaCircle className="mt-4 mr-2 text-gray-400 text-4xl dark:text-black-2" />
+              <div className="font-sm mt-5 dark:text-black-2">
+                <strong>Motivo para negociar com a Netimóveis:</strong>
+                <p className="mt-5">
+                  Aqui é desenvolvido esse motivo para negociar com a
+                  Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
+                  odit aut fugit
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="flex items-start">
-        <FaCircle className="mt-4 mr-2 text-gray-400 text-4xl dark:text-black-2" />
-        <div className="font-sm mt-5 dark:text-black-2">
-          <strong>Motivo para negociar com a Netimóveis:</strong>
-          <p className="mt-5">
-            Aqui é desenvolvido esse motivo para negociar com a
-            Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
-            odit aut fugit
-          </p>
-        </div>
-      </div>
-      <div className="flex items-start">
-        <FaCircle className="mt-4 mr-2 text-gray-400 text-4xl dark:text-black-2" />
-        <div className="font-sm mt-5 dark:text-black-2">
-          <strong>Motivo para negociar com a Netimóveis:</strong>
-          <p className="mt-5">
-            Aqui é desenvolvido esse motivo para negociar com a
-            Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
-            odit aut fugit
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
       {/* Cabeçalho com Compradores, Vendedores ou Curiosos */}
-      <div className="flex-col h-screen bg-gray-100 hidden sm:block">
+      <div className="flex flex-col h-screen bg-gray-100">
         <div className="text-center text-gray-600 p-4 mt-20">
           <h1 className="text-2xl font-bold text-justify ml-60 dark:text-white">
             Para compradores, vendedores ou curiosos :)
@@ -852,8 +622,8 @@ const Home = () => {
             <FiArrowRight className="text-black-2 w-6 h-6 dark:text-orange-500" />
           </div>
         </div>
-        <div className="justify-center items-center p-0 w-full hidden sm:block">
-          <div className="justify-center gap-40 hidden sm:block">
+        <div className="flex justify-center items-center p-0 w-full">
+          <div className="flex justify-center gap-40">
             <Link
               to="https://www.netimoveis.com/quem-somos#a-netimoveis"
               target="_blank"
@@ -867,12 +637,12 @@ const Home = () => {
               />
               <div className="flex items-center mt-4">
                 <div className="flex items-center">
-                  <GoClock className="mr-2 dark:text-white" />
+                  <GoClock className="mr-2 text-left dark:text-white" />
                   <p className="text-sm text-left dark:text-white">
                     2 Min de Leitura
                   </p>
                 </div>
-                <div className="ml-2">
+                <div className="ml-4">
                   {' '}
                   <p className="text-orange-500 text-sm">Mundo Netimóveis</p>
                 </div>
@@ -952,7 +722,7 @@ const Home = () => {
             }}
           />
         </div>
-        <div className="flex flex-col items-start justify-start mt-30 hidden sm:block">
+        <div className="flex flex-col items-start justify-start mt-30">
           <div className="flex space-x-4 p-4 ml-40 border-b-2 border-gray-300 w-full">
             <button
               className={`px-4 py-2 font-bold ${
@@ -992,8 +762,8 @@ const Home = () => {
             {activeTab2 === 'venda'}
             {activeTab2 === 'locacao'}
           </div>
-          <div className='hidden sm:block'>
-            <div className="grid-cols-3 ml-50 w-90% hidden sm:block">
+          <div>
+            <div className="grid grid-cols-3 ml-50 w-90%">
               <div className="mr-20">
                 <Link to="/" className="font-bold text-gray-600 text-lg">
                   Alugar
@@ -1013,7 +783,7 @@ const Home = () => {
                   </li>
                 </ul>
               </div>
-              <div className="mr-50 hidden sm:block">
+              <div className="mr-50">
                 <Link to="/" className="font-bold text-gray-600 text-lg">
                   Comprar
                 </Link>
@@ -1034,7 +804,7 @@ const Home = () => {
                   </li>
                 </ul>
               </div>
-              <div className="mr-0 hidden sm:block">
+              <div className="mr-0">
                 <Link to="/" className="font-bold text-gray-600 text-lg">
                   Comercial
                 </Link>
