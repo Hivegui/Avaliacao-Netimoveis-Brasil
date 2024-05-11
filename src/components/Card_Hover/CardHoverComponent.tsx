@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -10,7 +10,7 @@ import { FaChevronRight } from 'react-icons/fa'
 import { IoArrowForwardOutline } from 'react-icons/io5'
 
 const CardHover = () => {
-  const [content, setContent] = useState('alugar') // Estado para controlar o conteúdo exibido
+  const [content, setContent] = useState('alugar')
 
   const settings = {
     dots: false,
@@ -99,7 +99,10 @@ const CardHover = () => {
         Anunciar Imóvel
       </button>
       <div className="flex items-center mt-6">
-        <a href="#" className="text-black-2 font-bold flex items-center dark:text-white">
+        <a
+          href="#"
+          className="text-black-2 font-bold flex items-center dark:text-white"
+        >
           Descubra Quanto Cobrar
           <IoArrowForwardOutline className="ml-1 mt-1 text-black-2 text-xl dark:text-purple-500" />
         </a>

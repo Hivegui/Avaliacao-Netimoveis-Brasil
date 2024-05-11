@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+// Import de Ícones
 import { LocationMarkerIcon } from '@heroicons/react/solid'
 import { BiSearchAlt } from 'react-icons/bi'
 import { TbBed } from 'react-icons/tb'
@@ -8,7 +9,7 @@ function SearchBar() {
   const [selectedOption, setSelectedOption] = useState('Todos')
   const [roomSearch, setRoomSearch] = useState('')
   const addressInputRef = useRef(null)
-  const dropdownRef = useRef(null) // Referência para o dropdown
+  const dropdownRef = useRef(null)
 
   useEffect(() => {
     const script = document.createElement('script')
@@ -34,7 +35,7 @@ function SearchBar() {
 
     return () => {
       document.body.removeChild(script)
-      // Remove event listener ao desmontar o componente
+      // Remove event listener
       document.removeEventListener('click', handleClickOutside)
     }
   }, [])
@@ -47,7 +48,7 @@ function SearchBar() {
   // Função para verificar se o clique foi dentro ou fora do dropdown
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setShowLabel(true) // Fecha o dropdown se o clique foi fora dele
+      setShowLabel(true)
     }
   }
 
@@ -87,7 +88,7 @@ function SearchBar() {
 
           {showLabel && (
             <div
-              ref={dropdownRef} // Referência para o dropdown
+              ref={dropdownRef}
               className="absolute mt-80 py-5 px-10 bg-white shadow-lg rounded-xl text-gray-500 transition duration-300 focus:outline-none pl-4 ml-8"
             >
               <h1 className="mb-2 font-medium flex text-left">
@@ -132,7 +133,7 @@ function SearchBar() {
             </div>
           )}
         </div>
-        <div className='p-2'>
+        <div className="p-2">
           <button
             className="text-white bg-orange-500 hover:opacity-90 border-l rounded-full px-5 py-5 flex items-center relative"
             onClick={() => setShowLabel(false)}

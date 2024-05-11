@@ -7,6 +7,7 @@ import CarouselEstados from '../../components/Carousel/CarouselStates'
 import PropertySearch from '../../components/Component_Property_Search/PropertySearch'
 import CardHover from '../../components/Card_Hover/CardHoverComponent'
 import CardHoverImage from '../../components/Card_Hover/CardHoverImageComponent'
+import Footer from '../../components/Footer'
 // Import de Imagens
 import BackgroundPrincipal from '../../images/baner/BannerDeInicio.png'
 import AnuncieGratis from '../../images/baner/AnuncieGratis.png'
@@ -25,7 +26,6 @@ import { GoClock } from 'react-icons/go'
 import { FaCircle } from 'react-icons/fa'
 import { FiArrowRight } from 'react-icons/fi'
 import { LuExternalLink } from 'react-icons/lu'
-import Footer from '../../components/Footer'
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState('alugar')
@@ -86,7 +86,6 @@ const Home = () => {
       <div className="xl:hidden block justify-start w-full border-gray-300 mt-5 space-x-4">
         <PropertySearch />
       </div>
-
       <div className="px-5 mt-10 bg-white dark:bg-boxdark-2 sm:px-60">
         <a
           href="/"
@@ -217,18 +216,18 @@ const Home = () => {
           </p>
         </div>
 
+        {/* Componente CardHover */}
         <div className="mt-20">
           <CardHover />
         </div>
       </div>
 
-      {/* Componente de Hover */}
+      {/* Componente de CardHover Image */}
       <div className="mb-20">
         <CardHoverImage />
       </div>
 
       <div>
-        {/* Parte abaixo de 1280px */}
         <div className="block md:hidden">
           <div>
             <h1 className="mt-30 mb-5 ml-5 text-orange-500 text-base font-bold">
@@ -296,7 +295,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Não aparece acima de 640px */}
       <div className="grid-cols-1 px-75 hidden sm:hidden md:block">
         <h1 className="text-2xl text-left text-black-2 font-extrabold ml-5 dark:text-white">
           Prontos para te Receber em mais de 10 estados
@@ -326,10 +324,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* Não aparece acima de 640px */}
 
-      {/* Aparece abaixo de 640px */}
-      <div className="">
+      <div>
         <div className="grid grid-cols-1 md:hidden xl:hidden">
           <h1 className="text-lg mt-15 py-0 px-0 text-left text-black-2 font-extrabold ml-5 dark:text-white">
             Prontos para te Receber em <br />
@@ -373,14 +369,12 @@ const Home = () => {
             />
           </div>
 
-          {/* Bloco da frase de efeito e motivos - TELA ABAIXO DE 640PX */}
           <div>
             <h2 className="text-lg ml-5 mt-10 font-semibold bg-gray-100 dark:text-white dark:bg-boxdark-2">
               Aqui vai uma frase de efeito
             </h2>
 
             <div className="flex flex-col items-start bg-gray-100">
-              {/* Aqui vão os motivos */}
               <div className="flex flex-col items-start bg-gray-100">
                 <div className="flex items-start">
                   <div className="absolute mt-10 dark:text-black-2">
@@ -430,11 +424,10 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              {/* Final dos motivos */}
             </div>
           </div>
 
-          {/* Bloco de link para o blog */}
+          {/* Início Bloco de link para o blog */}
           <div className="mt-15 bg-white text-gray-600 dark:bg-boxdark-2">
             <div className="mt-15 bg-white text-gray-600 dark:bg-boxdark-2">
               <h2 className="text-xl ml-4 font-bold dark:text-white dark:bg-boxdark-2">
@@ -539,9 +532,10 @@ const Home = () => {
                 </h1>
               </Link>
             </div>
-            {/* Final do blog aqui */}
           </div>
-          {/* Bloco das imagens com links */}
+          {/* Final do blog aqui */}
+
+          {/* Bloco com imagem Faça Parte */}
           <div className="relative bg-center mt-20 mb-20 bg-gray-100 h-100">
             <img
               src={ParteUp}
@@ -549,15 +543,12 @@ const Home = () => {
               className="absolute w-full"
             />
           </div>
-          {/* Coloquei suas imagens com links aqui */}
         </div>
       </div>
 
       {/* Bloco da esquerda com imagem */}
       <div className="flex w-full mt-60">
         <div className="w-full hidden md:block">
-          {' '}
-          {/* Adicionando a classe hidden md:block para ocultar abaixo de 640px */}
           <img
             src={Apresentacao}
             alt="Anúncio Grátis"
@@ -566,8 +557,6 @@ const Home = () => {
           />
         </div>
         <div className="bg-gray-100 p-8 w-full text-center dark:bg-boxdark-2 hidden md:block">
-          {' '}
-          {/* Adicionando a classe hidden md:block para ocultar abaixo de 640px */}
           <h2 className="text-2xl font-bold mr-70 mb-4 dark:text-white dark:bg-boxdark-2">
             Aqui vai uma frase de efeito
           </h2>
@@ -581,7 +570,7 @@ const Home = () => {
                 <p className="mt-5 dark:text-white">
                   Aqui é desenvolvido esse motivo para negociar com a
                   Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
-                  odit aut mantoricanto
+                  odit aut aspernatur
                 </p>
               </div>
             </div>
@@ -592,7 +581,7 @@ const Home = () => {
                 <p className="mt-5 dark:text-white">
                   Aqui é desenvolvido esse motivo para negociar com a
                   Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
-                  odit aut mantoricanto
+                  odit aut aspernatur
                 </p>
               </div>
             </div>
@@ -603,7 +592,7 @@ const Home = () => {
                 <p className="mt-5">
                   Aqui é desenvolvido esse motivo para negociar com a
                   Netimóveis. ipsum voluptatum quia voluptas sit aspernatur aut
-                  odit aut mantoricanto
+                  odit aut aspernatur
                 </p>
               </div>
             </div>
@@ -716,6 +705,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
+
         {/* Imagem Faça Parte Netimóveis */}
         <div className="relative mt-20 text-center bg-gray-100 hidden sm:block dark:bg-boxdark-2">
           <img
@@ -911,6 +901,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        {/* Componente Footer */}
         <Footer />
       </div>
     </div>
